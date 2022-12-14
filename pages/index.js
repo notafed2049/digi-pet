@@ -1,11 +1,17 @@
+import { digimon } from "../assets/digimonData"
+
 import { 
-  Flex
+  Flex,
+  Image
  } from "@chakra-ui/react"
 
 export default function Home() {
   return (
     <Flex>
-      hello world
+      <Image 
+        src={ digimon[1].sprite }
+        alt={ digimon[1].name }
+      />
     </Flex>
   )
 }
