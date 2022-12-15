@@ -6,8 +6,7 @@ export const digimon = [
   },
   {
     name: 'Agumon',
-    sprite1: '/sprite/frame1/agu.gif',
-    sprite2: '/sprite/frame2/agu.gif',
+    sprite: '/sprite/agu.gif',
     artwork: '/artwork/agu.png'
   }
 ]
