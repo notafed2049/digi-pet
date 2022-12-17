@@ -1,4 +1,10 @@
-import { digimon } from "../assets/digimonData"
+// import { babyI } from "../assets/babyI";
+// import { babyII } from "../assets/babyII";
+// import { child } from '../assets/child';
+// import { adult } from '../assets/adult';
+// import { perfect } from '../assets/perfect';
+// import { ultimate } from '../assets/ultimate';
+
 import { DigiPixel } from "../components/DigiPixel"
 
 import { 
@@ -8,10 +14,15 @@ import {
 export default function Home() {
   return (
     <Flex
+      direction='column'
       justifyContent='center'
       alignItems='center'
     >
-      <DigiPixel digimon={ digimon[1] } />
+      {/* {
+        babyI.map(( digimon ) => {
+          return <DigiPixel key={ digimon.name } digimon={ digimon } />
+        })
+      } */}
     </Flex>
   )
 }

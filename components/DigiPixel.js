@@ -29,6 +29,10 @@ export const DigiPixel = ({ digimon }) => {
       animation={ animation }
       src={ digimon.sprite }
       alt={ digimon.name }
+      width='100px'
+      border='5px double'
+      borderColor='red.500'
+      borderRadius='5px'
     />
   );
 };
