@@ -1,11 +1,11 @@
-// import { babyI } from "../assets/babyI";
-// import { babyII } from "../assets/babyII";
-// import { child } from '../assets/child';
-// import { adult } from '../assets/adult';
-// import { perfect } from '../assets/perfect';
-// import { ultimate } from '../assets/ultimate';
+import { baby } from "../assets/baby";
+import { child } from '../assets/child';
+import { adult } from "../assets/adult";
+import { perfect } from "../assets/perfect";
+import { ultimate } from "../assets/ultimate";
 
-import { DigiPixel } from "../components/DigiPixel"
+import { BabyIdle } from "../components/idle/BabyIdle"
+import { NormalIdle } from "../components/idle/NormalIdle";
 
 import { 
   Flex,
@@ -19,10 +19,30 @@ export default function Home() {
       alignItems='center'
     >
       {/* {
-        babyI.map(( digimon ) => {
-          return <DigiPixel key={ digimon.name } digimon={ digimon } />
+        baby.map(( digimon ) => {
+          return <BabyIdle key={ digimon.species } digimon={ digimon } />
         })
       } */}
+      {
+        child.map(( digimon ) => {
+          return <NormalIdle key={ digimon.species } digimon={ digimon } />
+        })
+      }
+      {/* {
+        adult.map(( digimon ) => {
+          return <NormalIdle key={ digimon.species } digimon={ digimon } />
+        })
+      } */}
+      {/* {
+        perfect.map(( digimon ) => {
+          return <NormalIdle key={ digimon.species } digimon={ digimon } />
+        })
+      } */}
+      {
+        ultimate.map(( digimon ) => {
+          return <NormalIdle key={ digimon.species } digimon={ digimon } />
+        })
+      }
     </Flex>
   )
 }

@@ -1,17 +1,26 @@
 export const perfect = [
   {
-    name: 'Metalgreymon',
-    sprite: '/sprite/metalgrey-vi.gif',
-    artwork: '/artwork/metalgrey-vi.png'
+    species: 'Metalgreymon',
+    idle1: '/sprite/metalgrey/idle1.webp',
+    idle2: '/sprite/metalgrey/idle2.webp',
+    victory: '/sprite/metalgrey/victory.webp',
+    artwork: '/artwork/metalgrey_vi.png',//TODO change this
+    stage: 'perfect'
   },
   {
-    name: 'Metaltyranomon',
-    sprite: '/sprite/metaltyrano.gif',
-    artwork: '/artwork/metaltyrano.png'
+    species: 'Metaltyranomon',
+    idle1: '/sprite/metaltyrano/idle1.webp',
+    idle2: '/sprite/metaltyrano/idle2.webp',
+    victory: '/sprite/metaltyrano/victory.webp',
+    artwork: '/artwork/metaltyrano.png',
+    stage: 'perfect'
   },
   {
-    name: 'Neodevimon',
-    sprite: '/sprite/neodevi.gif',
-    artwork: '/artwork/neodevi.png'
+    species: 'Neodevimon',
+    idle1: '/sprite/neodevi/idle1.webp',
+    idle2: '/sprite/neodevi/idle2.webp',
+    victory: '/sprite/neodevi/victory.webp',
+    artwork: '/artwork/neodevi.png',
+    stage: 'perfect'
   }
 ]
