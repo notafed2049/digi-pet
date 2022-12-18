@@ -7,19 +7,20 @@ import {
 
 import { motion } from 'framer-motion';
 
+//TODO complete this styling
 export const Train = ({ digimon }) => {
   const trainKeyframse = keyframes`
     0% {
-      background: url(${ digimon.train1 }) no-repeat center/100%;
+      background: url( ${ digimon.sprite }train1.webp ) no-repeat center/100%;
     }
     33% {
-      background: url(${ digimon.train2 }) no-repeat center/100%;
+      background: url( ${ digimon.sprite }train2.webp ) no-repeat center/100%;
     }
     66% {
-      background: url(${ digimon.train1 }) no-repeat center/100%;
+      background: url( ${ digimon.sprite }train1.webp ) no-repeat center/100%;
     }
     100% {
-      background: url(${ digimon.train2 }) no-repeat center/100%;
+      background: url( ${ digimon.sprite }train2.webp ) no-repeat center/100%;
     }
   `;
 

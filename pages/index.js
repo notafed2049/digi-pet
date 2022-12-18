@@ -7,6 +7,8 @@ import { ultimate } from "../assets/ultimate";
 import { BabyIdle } from "../components/idle/BabyIdle"
 import { NormalIdle } from "../components/idle/NormalIdle";
 import { Train } from "../components/Train";
+import { Fight } from "../components/Fight";
+import { Sleep } from "../components/Sleep";
 
 
 import { 

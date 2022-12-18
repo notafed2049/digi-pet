@@ -8,20 +8,21 @@ import {
 
 import { motion } from 'framer-motion';
 
+//TODO complete this styling
 export const BabyIdle = ({ digimon }) => {
 
   const idleKeyframe = keyframes`
     0% {
-      background: url(${ digimon.idle1 }) no-repeat center/80%;
+      background: url( ${ digimon.sprite }idle1.webp ) no-repeat center/80%;
     }
     33% {
-      background: url(${ digimon.idle2 }) no-repeat center/80%;
+      background: url( ${ digimon.sprite }idle2.webp ) no-repeat center/80%;
     }
     66% {
-      background: url(${ digimon.idle3 }) no-repeat center/80%;
+      background: url( ${ digimon.sprite }idle3.webp ) no-repeat center/80%;
     }
     100% {
-      background: url(${ digimon.idle4 }) no-repeat center/80%;
+      background: url( ${ digimon.sprite }idle4.webp ) no-repeat center/80%;
     }
   `;
 
@@ -68,9 +69,9 @@ export const BabyIdle = ({ digimon }) => {
     >
       <Box
         as={ motion.div }
+        animation={ animation }
         width='33vw'
         height='33vw'
-        animation={ animation }
       />
     </Flex>
   );
