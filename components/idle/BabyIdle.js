@@ -2,6 +2,7 @@ import React from 'react';
 
 import { 
   Box,
+  Flex,
   keyframes
 } from '@chakra-ui/react';
 
@@ -24,34 +25,53 @@ export const BabyIdle = ({ digimon }) => {
     }
   `;
 
-  const skewKeyframe = keyframes`
+  const movingKeyframe = keyframes`
     0% {
-      transform: scaleX(1);
-    }
-    33% {
       transform: scaleX(-1);
+      margin-left: 0;
     }
-    66% {
+    20% {
+      transform: scaleX(-1);
+      margin-left: 33vw;
+    }
+    40% {
+      transform: scaleX(-1);
+      margin-left: 66vw;
+    }
+
+    60% {
       transform: scaleX(1);
+      margin-left: 66vw;
+    }
+    80% {
+      transform: scaleX(1);
+      margin-left: 33vw;
     }
     100% {
-      transform: scaleX(-1);
+      transform: scaleX(1);
+      margin-left: 0;
     }
   `;
 
   const animation = `
-    ${idleKeyframe} 2s steps(1, start) infinite,
-    ${ skewKeyframe } 10s steps(1, start) infinite alternate
+    ${idleKeyframe} 3s steps(1, start) infinite,
+    ${ movingKeyframe } 30s steps(1, start) infinite
   `;
 
   return (
-    <Box
-      as={ motion.div }
-      width='100px'
-      height='100px'
-      animation={ animation }
+    <Flex
+      minWidth='100vw'
       border='5px double'
       borderColor='red.500'
-    />
+      borderRadius='10px'
+      backgroundColor='red.600'
+    >
+      <Box
+        as={ motion.div }
+        width='33vw'
+        height='33vw'
+        animation={ animation }
+      />
+    </Flex>
   );
 };
