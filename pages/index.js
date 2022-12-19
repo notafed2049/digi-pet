@@ -1,3 +1,4 @@
+import { egg } from '../assets/egg';
 import { baby } from "../assets/baby";
 import { child } from '../assets/child';
 import { adult } from "../assets/adult";
@@ -9,6 +10,7 @@ import { NormalIdle } from "../components/idle/NormalIdle";
 import { Train } from "../components/Train";
 import { Fight } from "../components/Fight";
 import { Sleep } from "../components/Sleep";
+import { Egg } from '../components/Egg';
 
 
 import { 
@@ -20,6 +22,8 @@ export default function Home() {
     <Flex
       direction='column'
     >
+      <NormalIdle digimon={ ultimate[1] } />
+      <Fight digimon={ ultimate[1] } />
     </Flex>
   )
 }
