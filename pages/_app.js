@@ -10,7 +10,7 @@ const theme = extendTheme({
       'html, body': {
         backgroundColor: 'gray.700',
         color: 'red.500'
-      },
+      }
     }
   }
 });

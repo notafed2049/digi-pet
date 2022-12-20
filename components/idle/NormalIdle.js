@@ -66,11 +66,9 @@ export const NormalIdle = ({ digimon }) => {
     <Flex
       minWidth='100vw'
       border='5px double'
-      // borderColor='red.500'
-      borderColor='black'
+      borderColor={ digimon.borderTheme }
       borderRadius='10px'
-      // backgroundColor='red.600'
-      backgroundColor='gray.900'
+      backgroundColor={ digimon.bgTheme }
     >
       <Box
         as={ motion.div }

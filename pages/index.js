@@ -18,12 +18,29 @@ import {
  } from "@chakra-ui/react"
 
 export default function Home() {
+  const currentDigimon = egg[0];
+  console.log({ currentDigimon });
+
+  let digitama = currentDigimon.stage === 'digitama';
+  let baby = currentDigimon.stage === 'baby 1' || 'baby 2';
+  let grownUp = currentDigimon.stage !== 'digitama' || 'baby 1' || 'baby 2';
+
   return (
     <Flex
       direction='column'
     >
-      <NormalIdle digimon={ ultimate[1] } />
-      <Fight digimon={ ultimate[1] } />
+      {
+        digitama ? <Egg digitama={ currentDigimon } />
+        : null
+      }
+      {
+        baby ? <BabyIdle digimon={ currentDigimon } />
+        : null
+      }
+      {
+        grownUp ? <NormalIdle digimon={ currentDigimon } />
+        : null
+      }
     </Flex>
   )
 }
