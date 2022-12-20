@@ -10,7 +10,6 @@ import { motion } from 'framer-motion';
 
 //TODO complete this styling
 export const BabyIdle = ({ digimon }) => {
-
   const idleKeyframe = keyframes`
     0% {
       background: url( ${ digimon.sprite }idle1.webp ) no-repeat center/80%;
@@ -31,9 +30,17 @@ export const BabyIdle = ({ digimon }) => {
       transform: scaleX(-1);
       margin-left: 0;
     }
+    10% {
+      transform: scaleX(-1);
+      margin-left: 16.5vw;
+    }
     20% {
       transform: scaleX(-1);
       margin-left: 33vw;
+    }
+    30% {
+      transform: scaleX(-1);
+      margin-left: 49.5vw;
     }
     40% {
       transform: scaleX(-1);
@@ -44,9 +51,17 @@ export const BabyIdle = ({ digimon }) => {
       transform: scaleX(1);
       margin-left: 66vw;
     }
+    70% {
+      transform: scaleX(1);
+      margin-left: 49.5vw;
+    }
     80% {
       transform: scaleX(1);
       margin-left: 33vw;
+    }
+    90% {
+      transform: scaleX(1);
+      margin-left: 16.5vw;
     }
     100% {
       transform: scaleX(1);
@@ -63,9 +78,9 @@ export const BabyIdle = ({ digimon }) => {
     <Flex
       minWidth='100vw'
       border='5px double'
-      borderColor='red.500'
+      borderColor={ digimon.borderTheme }
       borderRadius='10px'
-      backgroundColor='red.600'
+      backgroundColor={ digimon.bgTheme }
     >
       <Box
         as={ motion.div }

@@ -24,8 +24,8 @@ export const ultimate = [
     sprite: '/sprite/donedevi/',
     artwork: '/artwork/donedevi.png',
     stage: 'ultimate',
-    borderTheme: 'black',
-    bgTheme: 'gray.900',
+    borderTheme: 'purple.900',
+    bgTheme: 'purple.500',
     DP: 56,
     power: 188
   }

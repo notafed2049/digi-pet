@@ -3,12 +3,16 @@ export const baby = [
     species: 'Botamon',
     sprite: '/sprite/bota/',
     artwork: '/artwork/bota.png',
-    stage: 'baby 1'
+    stage: 'baby1',
+    borderTheme: 'black',
+    bgTheme: 'white',
   },
   {
     species: 'Koromon',
     sprite: '/sprite/koro/',
     artwork: '/artwork/koro.png',
-    state: 'baby 2'
+    stage: 'baby2',
+    borderTheme: 'pink.900',
+    bgTheme: 'pink.400',
   }
 ]

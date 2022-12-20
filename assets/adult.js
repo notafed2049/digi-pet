@@ -24,8 +24,8 @@ export const adult = [
     sprite: '/sprite/devi/',
     artwork: '/artwork/devi.png',
     stage: 'adult',
-    borderTheme: 'black',
-    bgTheme: 'gray.900',
+    borderTheme: 'purple.900',
+    bgTheme: 'purple.500',
     DP: 28,
     power: 60
   }

@@ -1,3 +1,4 @@
+import { NumberDecrementStepper } from '@chakra-ui/react';
 import { Schema, model, models } from 'mongoose';
 
 //TODO finish this
@@ -7,24 +8,33 @@ const DigiPetSchema = new Schema({
   },
   user: {
     type: Schema.Types.ObjectId,
-    ref: 'User',
-    required: true
+    ref: 'User'
   },
+  //factory stats
+  digimonData: {
+    type: Object
+  },
+  //unique stats
   careMistake: {
     type: Number,
-    required: true
   },
   overfeed: {
     type: Number,
-    required: true
   },
   winPercentage: {
     type: Number,
-    required: true
+  },
+  effort: {
+    type: Number
   },
   battles: {
     type: Number,
-    required: true
+  },
+  evoLine: [{
+    type: String
+  }],
+  birthday: {
+    type: Date
   }
 });
 

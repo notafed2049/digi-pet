@@ -24,8 +24,8 @@ export const perfect = [
     sprite: '/sprite/neodevi/',
     artwork: '/artwork/neodevi.png',
     stage: 'perfect',
-    borderTheme: 'black',
-    bgTheme: 'gray.900',
+    borderTheme: 'purple.900',
+    bgTheme: 'purple.500',
     DP: 42,
     power: 126
   }

@@ -10,7 +10,6 @@ import { motion } from 'framer-motion';
 
 //TODO complete this styling
 export const NormalIdle = ({ digimon }) => {
-
   const idleKeyframe = keyframes`
     0% {
       background: url( ${ digimon.sprite }idle1.webp ) no-repeat center/100%;
@@ -19,13 +18,13 @@ export const NormalIdle = ({ digimon }) => {
       background: url( ${ digimon.sprite }idle2.webp ) no-repeat center/100%;
     }
     50% {
-      background: url( ${ digimon.sprite }victory.webp ) no-repeat center/100%;
+      background: url( ${ digimon.sprite }idle1.webp ) no-repeat center/100%;
     }
     75% {
       background: url( ${ digimon.sprite }idle1.webp ) no-repeat center/100%;
     }
     100% {
-      background: url( ${ digimon.sprite }idle1.webp ) no-repeat center/100%;
+      background: url( ${ digimon.sprite }idle2.webp ) no-repeat center/100%;
     }
   `;
 
@@ -34,9 +33,17 @@ export const NormalIdle = ({ digimon }) => {
       transform: scaleX(-1);
       margin-left: 0;
     }
+    10% {
+      transform: scaleX(-1);
+      margin-left: 16.5vw;
+    }
     20% {
       transform: scaleX(-1);
       margin-left: 33vw;
+    }
+    30% {
+      transform: scaleX(-1);
+      margin-left: 49.5vw;
     }
     40% {
       transform: scaleX(-1);
@@ -47,9 +54,17 @@ export const NormalIdle = ({ digimon }) => {
       transform: scaleX(1);
       margin-left: 66vw;
     }
+    70% {
+      transform: scaleX(1);
+      margin-left: 49.5vw;
+    }
     80% {
       transform: scaleX(1);
       margin-left: 33vw;
+    }
+    90% {
+      transform: scaleX(1);
+      margin-left: 16.5vw;
     }
     100% {
       transform: scaleX(1);
@@ -59,7 +74,7 @@ export const NormalIdle = ({ digimon }) => {
 
   const animation = `
     ${idleKeyframe} 2s steps(1, start) infinite,
-    ${ movingKeyframe } 30s steps(1, start) infinite
+    ${ movingKeyframe } 35s steps(1, start) infinite
   `;
 
   return (
