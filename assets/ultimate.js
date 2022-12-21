@@ -6,8 +6,10 @@ export const ultimate = [
     stage: 'ultimate',
     borderTheme: 'yellow.900',
     bgTheme: 'yellow.500',
-    DP: 56,
-    power: 188
+    //stats
+    DP: 45,
+    AP: 5,
+    HP: 14,
   },
   {
     species: 'Mugendramon',
@@ -16,8 +18,10 @@ export const ultimate = [
     stage: 'ultimate',
     borderTheme: 'black',
     bgTheme: 'gray.500',
-    DP: 56,
-    power: 188
+    //stats
+    DP: 55,
+    AP: 8,
+    HP: 18,
   },
   {
     species: 'Donedevimon',
@@ -26,7 +30,9 @@ export const ultimate = [
     stage: 'ultimate',
     borderTheme: 'purple.900',
     bgTheme: 'purple.500',
-    DP: 56,
-    power: 188
+    //stats
+    DP: 55,
+    AP: 6,
+    HP: 16,
   }
 ]

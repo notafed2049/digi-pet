@@ -6,8 +6,10 @@ export const adult = [
     stage: 'adult',
     borderTheme: 'orange.900',
     bgTheme: 'orange.500',
-    DP: 28,
-    power: 75
+    //stats
+    DP: 25,
+    AP: 3,
+    HP: 5,
   },
   {
     species: 'Tyranomon',
@@ -16,8 +18,10 @@ export const adult = [
     stage: 'adult',
     borderTheme: 'red.900',
     bgTheme: 'red.500',
-    DP: 28,
-    power: 70
+    //stats
+    DP: 20,
+    AP: 2,
+    HP: 5,
   },
   {
     species: 'Devimon',
@@ -26,7 +30,9 @@ export const adult = [
     stage: 'adult',
     borderTheme: 'purple.900',
     bgTheme: 'purple.500',
-    DP: 28,
-    power: 60
+    //stats
+    DP: 20,
+    AP: 2,
+    HP: 5,
   }
 ]

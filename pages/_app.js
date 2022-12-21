@@ -1,4 +1,5 @@
 import { ChakraProvider, extendTheme } from '@chakra-ui/react';
+import { SessionProvider } from "next-auth/react"
 
 const theme = extendTheme({
   // fonts: {
@@ -15,11 +16,14 @@ const theme = extendTheme({
   }
 });
 
-function MyApp({ Component, pageProps }) {
+function MyApp({ Component,
+  pageProps: { session, ...pageProps } }) {
   return (
-    <ChakraProvider theme={ theme }>
-      <Component { ...pageProps } />
-    </ChakraProvider>
+    <SessionProvider session={ session } >
+      <ChakraProvider theme={ theme }>
+        <Component { ...pageProps } />
+      </ChakraProvider>
+    </SessionProvider>
   );
 };
 

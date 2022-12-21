@@ -6,7 +6,9 @@ export const child = [
     stage: 'child',
     borderTheme: 'yellow.900',
     bgTheme: 'yellow.500',
-    DP: 14,
-    power: 18
+    //stats
+    DP: 10,
+    AP: 2,
+    HP: 3,
   }
 ]

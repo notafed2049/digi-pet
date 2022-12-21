@@ -6,8 +6,10 @@ export const perfect = [
     stage: 'perfect',
     borderTheme: 'orange.900',
     bgTheme: 'orange.500',
-    DP: 42,
-    power: 126
+    //stats
+    DP: 35,
+    AP: 4,
+    HP: 12,
   },
   {
     species: 'Metaltyranomon',
@@ -16,8 +18,10 @@ export const perfect = [
     stage: 'perfect',
     borderTheme: 'black',
     bgTheme: 'gray.500',
-    DP: 42,
-    power: 126
+    //stats
+    DP: 35,
+    AP: 3,
+    HP: 10,
   },
   {
     species: 'Neodevimon',
@@ -26,7 +30,9 @@ export const perfect = [
     stage: 'perfect',
     borderTheme: 'purple.900',
     bgTheme: 'purple.500',
-    DP: 42,
-    power: 126
+    //stats
+    DP: 35,
+    AP: 3,
+    HP: 10,
   }
 ]
