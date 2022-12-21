@@ -1,4 +1,3 @@
-import { NumberDecrementStepper } from '@chakra-ui/react';
 import { Schema, model, models } from 'mongoose';
 
 //TODO finish this
@@ -18,7 +17,7 @@ const DigiPetSchema = new Schema({
   careMistake: {
     type: Number,
   },
-  overfeed: {
+  overFeed: {
     type: Number,
   },
   winPercentage: {
