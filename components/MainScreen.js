@@ -4,7 +4,7 @@ import { Egg } from './idle/Egg';
 import { BabyIdle } from './idle/BabyIdle';
 import { NormalIdle } from './idle/NormalIdle';
 
-export const DigiPet = ({ pet }) => {
+export const MainScreen = ({ pet }) => {
   if( pet.stage === 'digitama' ) {
     return <Egg digitama={ pet } />
   }

@@ -7,9 +7,9 @@ export default async function handler( req, res ) {
       await dbConnect();
 
       const newPet = new DigiPet({
-        name: 'someString',
+        name: req.body.name,
         user: req.body.user,
-        digimonData: 'someObject',
+        digimonData: req.body.digimonData,
         careMistake: 0,
         overFeed: 0,
         winPercentage: 0,
@@ -23,11 +23,11 @@ export default async function handler( req, res ) {
         // user: req.body.user
       });
 
-      newPost.save();
+      newPet.save();
 
       return res.status( 200 ).json({
         message: 'digi pet created',
-        newPost
+        newPet
       });
     }
     else {

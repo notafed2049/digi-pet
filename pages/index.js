@@ -1,8 +1,11 @@
 import { useSession, signOut } from 'next-auth/react';
 import { unstable_getServerSession } from 'next-auth';
+import axios from 'axios';
+import { useRouter } from 'next/router';
 
 import dbConnect from '../lib/mongooseConnect';
 import { authOptions } from './api/auth/[...nextauth]';
+import DigiPet from '../model/digipet';
 
 import { egg } from '../assets/egg';
 import { baby } from "../assets/baby";
@@ -11,7 +14,7 @@ import { adult } from "../assets/adult";
 import { perfect } from "../assets/perfect";
 import { ultimate } from "../assets/ultimate";
 
-import { DigiPet } from '../components/DigiPet';
+import { MainScreen } from '../components/MainScreen';
 import { Train } from "../components/Train";
 import { Fight } from "../components/Fight";
 import { Sleep } from "../components/Sleep";
@@ -22,17 +25,53 @@ import {
   Text
  } from "@chakra-ui/react"
 
-export default function Home() {
+export default function Home({ myPet }) {
   const { data: session } = useSession();
+  const router = useRouter();
 
-  console.log({ session });
+  const createDigimon = async () => {
+    try {
+      const response = await axios({
+        method: 'post',
+        url: '/api/digipet/create',
+        withCredentials: true,
+        data: {
+          name: 'dummy 001',
+          user: session.user.id,
+          digimonData: egg[0],
+        },
+      });
+  
+      return response.data;
+    }
+    catch( error ) {
+      console.log( error );
+    }
+    finally {
+      console.log( 'success' );
+      // setOpenOptions( false );
+      router.replace( router.asPath );
+    }
+  };
 
   if( session ) {
+    // console.log(session.user.id );
+    // console.log({ myPet });
+
     return (
       <Flex
         direction='column'
       >
-        <DigiPet pet={ ultimate[0] } />
+        <Text>Pet</Text>
+        {
+          myPet ? <MainScreen pet={ myPet.digimonData } />
+          : null
+        }
+        <Button
+          onClick={ () => createDigimon() }
+        >
+          Create Egg
+        </Button>
         <Text>
           Signed in as { session.user.email }
         </Text>
@@ -44,21 +83,6 @@ export default function Home() {
       </Flex>
     )
   }
-
-  // return (
-  //   <Flex
-  //     direction='column'
-  //     justifyContent='center'
-  //     alignItems='center'
-  //   >
-  //     <Text>Not Signed In</Text>
-  //     <Button
-  //       onClick={ () => signIn() }
-  //     >
-  //       Sign In
-  //     </Button>
-  //   </Flex>
-  // )
 }
 
 export async function getServerSideProps( context ) {
@@ -68,20 +92,11 @@ export async function getServerSideProps( context ) {
     try {
       await dbConnect();
 
-      // const currentUser = await User.findById( session.user.id )
-      //   .populate({ path: 'friends', model: User });
-      
-      // const posts = await Post.find().sort({ date: -1 })
-      // .populate({ path: 'user', model: User });
-    
-      // const comments = await Comment.find().sort({ date: -1 })
-      //   .populate({ path: 'user', model: User });
+      const myPet = await DigiPet.findOne({ user: session.user.id });
   
       return {
         props: {
-          // currentUser: JSON.parse( JSON.stringify( currentUser )),
-          // posts: JSON.parse( JSON.stringify( posts )),
-          // comments: JSON.parse( JSON.stringify( comments )),
+          myPet: JSON.parse( JSON.stringify( myPet )),
         },
       }
     }

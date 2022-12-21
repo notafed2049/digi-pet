@@ -37,6 +37,6 @@ const DigiPetSchema = new Schema({
   }
 });
 
-const User = models.DigiPet || model( 'User', DigiPetSchema );
+const DigiPet = models.DigiPet || model( 'DigiPet', DigiPetSchema );
 
 export default DigiPet;
