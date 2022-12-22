@@ -1,17 +1,21 @@
 import dbConnect from '../../../lib/mongooseConnect';
 import DigiPet from '../../../model/digipet';
 
+import { ultimate } from '../../../assets/ultimate';
+
 export default async function handler( req, res ) {
   try {
     if( req.method === 'PUT' ) {
       await dbConnect();
 
-      const digipet = await DigiPet.updateOne({
-        _id: req.body.digimonId
-      },
-      {
-        digimonData: req.body.digimonData
-      });
+      const digipet = await DigiPet.findById( req.body.digimonId );
+      let evoList = digipet.digimonData.nextStage;
+      let ultimateEvo = Math.floor( Math.random() * evoList.length);
+
+      let found = ultimate.find( digimon => digimon.species = evoList[ultimateEvo] );
+      digipet.digimonData = found;
+
+      digipet.save();
 
       return res.status( 200 ).json({ message: 'ultimate evo complete' });
     }

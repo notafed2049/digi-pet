@@ -8,7 +8,7 @@ import { authOptions } from './api/auth/[...nextauth]';
 import DigiPet from '../model/digipet';
 
 import { egg } from '../assets/egg';
-import { baby } from "../assets/baby";
+import { baby1, baby2 } from "../assets/baby";
 import { child } from '../assets/child';
 import { adult } from "../assets/adult";
 import { perfect } from "../assets/perfect";
@@ -62,7 +62,6 @@ export default function Home({ myPet }) {
         withCredentials: true,
         data: {
           digimonId: myPet._id,
-          digimonData: baby[0]
         },
       });
   
@@ -86,7 +85,6 @@ export default function Home({ myPet }) {
         withCredentials: true,
         data: {
           digimonId: myPet._id,
-          digimonData: baby[1]
         },
       });
   
@@ -133,8 +131,7 @@ export default function Home({ myPet }) {
         url: '/api/digipet/adultEvo',
         withCredentials: true,
         data: {
-          digimonId: myPet._id,
-          digimonData: adult[0]
+          digimonId: myPet._id
         },
       });
   
@@ -157,8 +154,7 @@ export default function Home({ myPet }) {
         url: '/api/digipet/perfectEvo',
         withCredentials: true,
         data: {
-          digimonId: myPet._id,
-          digimonData: perfect[0]
+          digimonId: myPet._id
         },
       });
   
@@ -181,8 +177,30 @@ export default function Home({ myPet }) {
         url: '/api/digipet/ultimateEvo',
         withCredentials: true,
         data: {
-          digimonId: myPet._id,
-          digimonData: ultimate[0]
+          digimonId: myPet._id
+        },
+      });
+  
+      return response.data;
+    }
+    catch( error ) {
+      console.log( error );
+    }
+    finally {
+      console.log( 'success' );
+      // setOpenOptions( false );
+      router.replace( router.asPath );
+    }
+  };
+
+  const deletePet = async () => {
+    try {
+      const response = await axios({
+        method: 'delete',
+        url: '/api/digipet/delete',
+        withCredentials: true,
+        data: {
+          digimonId: myPet._id
         },
       });
   
@@ -199,8 +217,6 @@ export default function Home({ myPet }) {
   };
 
   if( session ) {
-    // console.log(session.user.id );
-    // console.log({ myPet });
 
     return (
       <Flex
@@ -281,6 +297,14 @@ export default function Home({ myPet }) {
             colorScheme='red.500'
           >
             Ultimate Evolution
+          </Button>
+
+          <Button
+            onClick={ () => deletePet() }
+            variant='outline'
+            colorScheme='red.500'
+          >
+            Delete
           </Button>
 
         </Flex>

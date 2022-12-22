@@ -4,6 +4,7 @@ export const perfect = [
     sprite: '/sprite/metalgrey/',
     artwork: '/artwork/metalgrey_vi.png',//TODO change this
     stage: 'perfect',
+    nextStage: [ 'Wargreymon', 'Mugendramon', 'Gaiomon' ],
     borderTheme: 'orange.900',
     bgTheme: 'orange.500',
     //stats
@@ -12,10 +13,11 @@ export const perfect = [
     AP: 4,
   },
   {
-    species: 'Metaltyranomon',
+    species: 'Mastertyranomon',
     sprite: '/sprite/mastertyrano/',
     artwork: '/artwork/metaltyrano.png',
     stage: 'perfect',
+    nextStage: [ 'Wargreymon', 'Mugendramon', 'Gaiomon' ],
     borderTheme: 'black',
     bgTheme: 'gray.500',
     //stats
@@ -28,6 +30,7 @@ export const perfect = [
     sprite: '/sprite/skullgrey/',
     artwork: '/artwork/neodevi.png',
     stage: 'perfect',
+    nextStage: [ 'Wargreymon', 'Mugendramon', 'Gaiomon' ],
     borderTheme: 'purple.900',
     bgTheme: 'purple.500',
     //stats

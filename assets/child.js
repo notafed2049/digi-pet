@@ -4,6 +4,7 @@ export const child = [
     sprite: 'sprite/agu/',
     artwork: '/artwork/agu.png',
     stage: 'child',
+    nextStage: [ 'Greymon', 'Tyranomon', 'Devidramon' ],
     borderTheme: 'yellow.900',
     bgTheme: 'yellow.500',
     //stats
