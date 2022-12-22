@@ -10,17 +10,13 @@ export default async function handler( req, res ) {
         name: req.body.name,
         user: req.body.user,
         digimonData: req.body.digimonData,
+        evoLine: [], //someArray
+        birthday: new Date(),
         careMistake: 0,
         overFeed: 0,
         winPercentage: 0,
         effort: 0,
         battles: 0,
-        evoLine: [], //someArray
-        birthday: new Date()
-        // content: req.body.content,
-        // image: req.body.image,
-        // date: new Date(),
-        // user: req.body.user
       });
 
       newPet.save();

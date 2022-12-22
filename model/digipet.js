@@ -2,39 +2,21 @@ import { Schema, model, models } from 'mongoose';
 
 //TODO finish this
 const DigiPetSchema = new Schema({
-  name: {
-    type: String,
-  },
+  name: { type: String },
   user: {
     type: Schema.Types.ObjectId,
     ref: 'User'
   },
   //factory stats
-  digimonData: {
-    type: Object
-  },
+  digimonData: { type: Object },
   //unique stats
-  careMistake: {
-    type: Number,
-  },
-  overFeed: {
-    type: Number,
-  },
-  winPercentage: {
-    type: Number,
-  },
-  effort: {
-    type: Number
-  },
-  battles: {
-    type: Number,
-  },
-  evoLine: [{
-    type: String
-  }],
-  birthday: {
-    type: Date
-  }
+  careMistake: { type: Number },
+  overFeed: { type: Number },
+  winPercentage: { type: Number },
+  effort: { type: Number },
+  battles: { type: Number },
+  evoLine: [{ type: String }],
+  birthday: { type: Date }
 });
 
 const DigiPet = models.DigiPet || model( 'DigiPet', DigiPetSchema );

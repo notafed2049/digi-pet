@@ -38,7 +38,151 @@ export default function Home({ myPet }) {
         data: {
           name: 'dummy 001',
           user: session.user.id,
-          digimonData: egg[0],
+          digimonData: egg[0]
+        },
+      });
+  
+      return response.data;
+    }
+    catch( error ) {
+      console.log( error );
+    }
+    finally {
+      console.log( 'success' );
+      // setOpenOptions( false );
+      router.replace( router.asPath );
+    }
+  };
+
+  const baby1Evo = async () => {
+    try {
+      const response = await axios({
+        method: 'put',
+        url: '/api/digipet/baby1Evo',
+        withCredentials: true,
+        data: {
+          digimonId: myPet._id,
+          digimonData: baby[0]
+        },
+      });
+  
+      return response.data;
+    }
+    catch( error ) {
+      console.log( error );
+    }
+    finally {
+      console.log( 'success' );
+      // setOpenOptions( false );
+      router.replace( router.asPath );
+    }
+  };
+
+  const baby2Evo = async () => {
+    try {
+      const response = await axios({
+        method: 'put',
+        url: '/api/digipet/baby2Evo',
+        withCredentials: true,
+        data: {
+          digimonId: myPet._id,
+          digimonData: baby[1]
+        },
+      });
+  
+      return response.data;
+    }
+    catch( error ) {
+      console.log( error );
+    }
+    finally {
+      console.log( 'success' );
+      // setOpenOptions( false );
+      router.replace( router.asPath );
+    }
+  };
+
+  const childEvo = async () => {
+    try {
+      const response = await axios({
+        method: 'put',
+        url: '/api/digipet/childEvo',
+        withCredentials: true,
+        data: {
+          digimonId: myPet._id,
+          digimonData: child[0]
+        },
+      });
+  
+      return response.data;
+    }
+    catch( error ) {
+      console.log( error );
+    }
+    finally {
+      console.log( 'success' );
+      // setOpenOptions( false );
+      router.replace( router.asPath );
+    }
+  };
+
+  const adultEvo = async () => {
+    try {
+      const response = await axios({
+        method: 'put',
+        url: '/api/digipet/adultEvo',
+        withCredentials: true,
+        data: {
+          digimonId: myPet._id,
+          digimonData: adult[0]
+        },
+      });
+  
+      return response.data;
+    }
+    catch( error ) {
+      console.log( error );
+    }
+    finally {
+      console.log( 'success' );
+      // setOpenOptions( false );
+      router.replace( router.asPath );
+    }
+  };
+
+  const perfectEvo = async () => {
+    try {
+      const response = await axios({
+        method: 'put',
+        url: '/api/digipet/perfectEvo',
+        withCredentials: true,
+        data: {
+          digimonId: myPet._id,
+          digimonData: perfect[0]
+        },
+      });
+  
+      return response.data;
+    }
+    catch( error ) {
+      console.log( error );
+    }
+    finally {
+      console.log( 'success' );
+      // setOpenOptions( false );
+      router.replace( router.asPath );
+    }
+  };
+
+  const ultimateEvo = async () => {
+    try {
+      const response = await axios({
+        method: 'put',
+        url: '/api/digipet/ultimateEvo',
+        withCredentials: true,
+        data: {
+          digimonId: myPet._id,
+          digimonData: ultimate[0]
         },
       });
   
@@ -62,41 +206,85 @@ export default function Home({ myPet }) {
       <Flex
         direction='column'
       >
+        <Text>
+          Signed in as { session.user.email }
+        </Text>
+        <Button
+          onClick={ () => signOut({ callbackUrl: '/login' }) }
+          variant='outline'
+          colorScheme='red.500'
+        >
+          Sign Out
+        </Button>
         <Text>Pet</Text>
         {
           myPet ? <MainScreen pet={ myPet.digimonData } />
           : null
         }
 
-        {/* {
-          adult.map(( digimon ) => {
-            return <MainScreen key={ digimon.species } pet={ digimon } />
-          })
-        }
-        {
-          perfect.map(( digimon ) => {
-            return <MainScreen key={ digimon.species } pet={ digimon } />
-          })
-        }
-        {
-          ultimate.map(( digimon ) => {
-            return <MainScreen key={ digimon.species } pet={ digimon } />
-          })
-        } */}
+        <Flex
+          direction='column'
+          justifyContent='center'
+          padding='10px'
+        >
+          <Button
+            onClick={ () => createDigimon() }
+            variant='outline'
+            colorScheme='red.500'
+          >
+            Create Egg
+          </Button>
 
-        <Button
-          onClick={ () => createDigimon() }
-        >
-          Create Egg
-        </Button>
-        <Text>
-          Signed in as { session.user.email }
-        </Text>
-        <Button
-          onClick={ () => signOut({ callbackUrl: '/login' }) }
-        >
-          Sign Out
-        </Button>
+          <Button
+            onClick={ () => baby1Evo() }
+            variant='outline'
+            colorScheme='red.500'
+          >
+            Baby 1 Evolution
+          </Button>
+
+          <Button
+            onClick={ () => baby2Evo() }
+            variant='outline'
+            colorScheme='red.500'
+          >
+            Baby 2 Evolution
+          </Button>
+
+          <Button
+            onClick={ () => childEvo() }
+            variant='outline'
+            colorScheme='red.500'
+          >
+            Child Evolution
+          </Button>
+
+          <Button
+            onClick={ () => adultEvo() }
+            variant='outline'
+            colorScheme='red.500'
+          >
+            Adult Evolution
+          </Button>
+
+          <Button
+            onClick={ () => perfectEvo() }
+            variant='outline'
+            colorScheme='red.500'
+          >
+            Perfect Evolution
+          </Button>
+
+          <Button
+            onClick={ () => ultimateEvo() }
+            variant='outline'
+            colorScheme='red.500'
+          >
+            Ultimate Evolution
+          </Button>
+
+        </Flex>
+
       </Flex>
     )
   }
