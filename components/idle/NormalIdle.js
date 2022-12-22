@@ -10,21 +10,26 @@ import { motion } from 'framer-motion';
 
 //TODO complete this styling
 export const NormalIdle = ({ digimon }) => {
-  const idleKeyframe = keyframes`
+  const walkingKeyframe = keyframes`
     0% {
-      background: url( ${ digimon.sprite }idle1.webp ) no-repeat center/100%;
+      background: url( ${ digimon.sprite }walk1.webp ) no-repeat center/100%;
     }
-    25% {
-      background: url( ${ digimon.sprite }idle2.webp ) no-repeat center/100%;
+    20% {
+      background: url( ${ digimon.sprite }walk2.webp ) no-repeat center/100%;
     }
-    50% {
-      background: url( ${ digimon.sprite }idle1.webp ) no-repeat center/100%;
+
+    40% {
+      background: url( ${ digimon.sprite }walk1.webp ) no-repeat center/100%;
     }
-    75% {
-      background: url( ${ digimon.sprite }idle1.webp ) no-repeat center/100%;
+    60% {
+      background: url( ${ digimon.sprite }walk2.webp ) no-repeat center/100%;
+    }
+
+    80% {
+      background: url( ${ digimon.sprite }walk1.webp ) no-repeat center/100%;
     }
     100% {
-      background: url( ${ digimon.sprite }idle2.webp ) no-repeat center/100%;
+      background: url( ${ digimon.sprite }walk2.webp ) no-repeat center/100%;
     }
   `;
 
@@ -73,7 +78,7 @@ export const NormalIdle = ({ digimon }) => {
   `;
 
   const animation = `
-    ${idleKeyframe} 2s steps(1, start) infinite,
+    ${walkingKeyframe} 5s steps(1, start) infinite,
     ${ movingKeyframe } 35s steps(1, start) infinite
   `;
 

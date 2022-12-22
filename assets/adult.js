@@ -8,8 +8,8 @@ export const adult = [
     bgTheme: 'orange.500',
     //stats
     DP: 25,
-    AP: 3,
     HP: 5,
+    AP: 3,
   },
   {
     species: 'Tyranomon',
@@ -20,19 +20,31 @@ export const adult = [
     bgTheme: 'red.500',
     //stats
     DP: 20,
-    AP: 2,
     HP: 5,
+    AP: 2,
   },
   {
-    species: 'Devimon',
-    sprite: '/sprite/devi/',
+    species: 'Devidramon',
+    sprite: '/sprite/devidra/',
     artwork: '/artwork/devi.png',
     stage: 'adult',
     borderTheme: 'purple.900',
     bgTheme: 'purple.500',
     //stats
-    DP: 20,
-    AP: 2,
+    DP: 15,
+    HP: 4,
+    AP: 3,
+  },
+  {
+    species: 'Veedramon',
+    sprite: '/sprite/veedra/',
+    artwork: '/artwork/devi.png',
+    stage: 'adult',
+    borderTheme: 'blue.900',
+    bgTheme: 'blue.500',
+    //stats
+    DP: 25,
     HP: 5,
-  }
+    AP: 3,
+  },
 ]

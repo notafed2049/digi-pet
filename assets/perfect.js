@@ -8,31 +8,43 @@ export const perfect = [
     bgTheme: 'orange.500',
     //stats
     DP: 35,
-    AP: 4,
     HP: 12,
+    AP: 4,
   },
   {
     species: 'Metaltyranomon',
-    sprite: '/sprite/metaltyrano/',
+    sprite: '/sprite/mastertyrano/',
     artwork: '/artwork/metaltyrano.png',
     stage: 'perfect',
     borderTheme: 'black',
     bgTheme: 'gray.500',
     //stats
     DP: 35,
-    AP: 3,
     HP: 10,
+    AP: 3,
   },
   {
-    species: 'Neodevimon',
-    sprite: '/sprite/neodevi/',
+    species: 'Skullgreymon',
+    sprite: '/sprite/skullgrey/',
     artwork: '/artwork/neodevi.png',
     stage: 'perfect',
     borderTheme: 'purple.900',
     bgTheme: 'purple.500',
     //stats
+    DP: 30,
+    HP: 16,
+    AP: 4,
+  },
+  {
+    species: 'Aeroveedramon',
+    sprite: '/sprite/aeroveedra/',
+    artwork: '/artwork/devi.png',
+    stage: 'adult',
+    borderTheme: 'blue.900',
+    bgTheme: 'blue.500',
+    //stats
     DP: 35,
-    AP: 3,
-    HP: 10,
-  }
+    HP: 12,
+    AP: 4,
+  },
 ]

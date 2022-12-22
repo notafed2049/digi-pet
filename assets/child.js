@@ -8,7 +8,7 @@ export const child = [
     bgTheme: 'yellow.500',
     //stats
     DP: 10,
-    AP: 2,
     HP: 3,
+    AP: 2,
   }
 ]

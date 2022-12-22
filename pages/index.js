@@ -67,6 +67,23 @@ export default function Home({ myPet }) {
           myPet ? <MainScreen pet={ myPet.digimonData } />
           : null
         }
+
+        {/* {
+          adult.map(( digimon ) => {
+            return <MainScreen key={ digimon.species } pet={ digimon } />
+          })
+        }
+        {
+          perfect.map(( digimon ) => {
+            return <MainScreen key={ digimon.species } pet={ digimon } />
+          })
+        }
+        {
+          ultimate.map(( digimon ) => {
+            return <MainScreen key={ digimon.species } pet={ digimon } />
+          })
+        } */}
+
         <Button
           onClick={ () => createDigimon() }
         >

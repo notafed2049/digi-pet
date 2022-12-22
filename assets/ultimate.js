@@ -8,8 +8,8 @@ export const ultimate = [
     bgTheme: 'yellow.500',
     //stats
     DP: 45,
-    AP: 5,
     HP: 14,
+    AP: 5,
   },
   {
     species: 'Mugendramon',
@@ -20,19 +20,31 @@ export const ultimate = [
     bgTheme: 'gray.500',
     //stats
     DP: 55,
-    AP: 8,
     HP: 18,
+    AP: 8,
   },
   {
-    species: 'Donedevimon',
-    sprite: '/sprite/donedevi/',
+    species: 'Gaiomon',
+    sprite: '/sprite/gaio/',
     artwork: '/artwork/donedevi.png',
     stage: 'ultimate',
-    borderTheme: 'purple.900',
-    bgTheme: 'purple.500',
+    borderTheme: 'red.900',
+    bgTheme: 'red.500',
     //stats
-    DP: 55,
-    AP: 6,
-    HP: 16,
-  }
+    DP: 60,
+    HP: 10,
+    AP: 9,
+  },
+  {
+    species: 'Ulforceveedramon',
+    sprite: '/sprite/ulforceveedra/',
+    artwork: '/artwork/devi.png',
+    stage: 'adult',
+    borderTheme: 'blue.900',
+    bgTheme: 'blue.500',
+    //stats
+    DP: 50,
+    HP: 14,
+    AP: 7,
+  },
 ]
