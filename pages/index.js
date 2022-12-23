@@ -76,16 +76,6 @@ export default function Home({ myPet }) {
       <Flex
         direction='column'
       >
-        <Text>
-          Signed in as { session.user.email }
-        </Text>
-        <Button
-          onClick={ () => signOut({ callbackUrl: '/login' }) }
-          variant='outline'
-          colorScheme='red.500'
-        >
-          Sign Out
-        </Button>
         <Text>Pet</Text>
         {
           myPet ? <MainScreen pet={ myPet } />
@@ -119,7 +109,18 @@ export default function Home({ myPet }) {
           >
             Click Me
           </Button>
-
+          <Text
+            marginTop='20px'
+          >
+            Signed in as { session.user.email }
+          </Text>
+          <Button
+            onClick={ () => signOut({ callbackUrl: '/login' }) }
+            variant='outline'
+            colorScheme='red.500'
+          >
+            Sign Out
+          </Button>
         </Flex>
 
       </Flex>

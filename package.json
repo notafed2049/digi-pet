@@ -9,9 +9,12 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@chakra-ui/icons": "^2.0.14",
     "@chakra-ui/react": "^2.4.3",
     "@emotion/react": "^11.10.5",
     "@emotion/styled": "^11.10.5",
+    "@fontsource/patua-one": "^4.5.9",
+    "@fontsource/press-start-2p": "^4.5.11",
     "@next-auth/mongodb-adapter": "^1.1.1",
     "axios": "^1.2.1",
     "eslint": "8.29.0",

@@ -12,6 +12,7 @@ export default async function handler( req, res ) {
       const randomNum = Math.floor( Math.random() * digipet.digimonData.nextStage.length );
       const evo = ultimate.find(( digimon ) => digimon.species === digipet.digimonData.nextStage[ randomNum ] );
       digipet.digimonData = evo;
+      digipet.evoLine.push( evo.species );
 
       digipet.save();
 
