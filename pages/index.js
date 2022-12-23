@@ -8,11 +8,6 @@ import { authOptions } from './api/auth/[...nextauth]';
 import DigiPet from '../model/digipet';
 
 import { egg } from '../assets/egg';
-import { baby1, baby2 } from "../assets/baby";
-import { child } from '../assets/child';
-import { adult } from "../assets/adult";
-import { perfect } from "../assets/perfect";
-import { ultimate } from "../assets/ultimate";
 
 import { MainScreen } from '../components/MainScreen';
 import { Train } from "../components/Train";
@@ -108,7 +103,6 @@ export default function Home({ myPet }) {
         withCredentials: true,
         data: {
           digimonId: myPet._id,
-          digimonData: child[0]
         },
       });
   
@@ -305,6 +299,13 @@ export default function Home({ myPet }) {
             colorScheme='red.500'
           >
             Delete
+          </Button>
+          <Button
+            onClick={ () => console.log( Math.floor( Math.random() * myPet.digimonData.nextStage.length ) ) }
+            variant='outline'
+            colorScheme='red.500'
+          >
+            Click Me
           </Button>
 
         </Flex>

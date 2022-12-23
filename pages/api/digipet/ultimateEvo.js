@@ -9,11 +9,12 @@ export default async function handler( req, res ) {
       await dbConnect();
 
       const digipet = await DigiPet.findById( req.body.digimonId );
-      let evoList = digipet.digimonData.nextStage;
-      let ultimateEvo = Math.floor( Math.random() * evoList.length);
+      const randomNum = Math.floor( Math.random() * digipet.digimonData.nextStage.length );
+      const evo = ultimate.find(( digimon ) => digimon.species === digipet.digimonData.nextStage[ randomNum ] );
+      digipet.digimonData = evo;
 
-      let found = ultimate.find( digimon => digimon.species = evoList[ultimateEvo] );
-      digipet.digimonData = found;
+      console.log({ evo });
+      console.log('randomNum:', randomNum);
 
       digipet.save();
 
