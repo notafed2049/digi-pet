@@ -49,144 +49,6 @@ export default function Home({ myPet }) {
     }
   };
 
-  const baby1Evo = async () => {
-    try {
-      const response = await axios({
-        method: 'put',
-        url: '/api/digipet/baby1Evo',
-        withCredentials: true,
-        data: {
-          digimonId: myPet._id,
-        },
-      });
-  
-      return response.data;
-    }
-    catch( error ) {
-      console.log( error );
-    }
-    finally {
-      console.log( 'success' );
-      // setOpenOptions( false );
-      router.replace( router.asPath );
-    }
-  };
-
-  const baby2Evo = async () => {
-    try {
-      const response = await axios({
-        method: 'put',
-        url: '/api/digipet/baby2Evo',
-        withCredentials: true,
-        data: {
-          digimonId: myPet._id,
-        },
-      });
-  
-      return response.data;
-    }
-    catch( error ) {
-      console.log( error );
-    }
-    finally {
-      console.log( 'success' );
-      // setOpenOptions( false );
-      router.replace( router.asPath );
-    }
-  };
-
-  const childEvo = async () => {
-    try {
-      const response = await axios({
-        method: 'put',
-        url: '/api/digipet/childEvo',
-        withCredentials: true,
-        data: {
-          digimonId: myPet._id,
-        },
-      });
-  
-      return response.data;
-    }
-    catch( error ) {
-      console.log( error );
-    }
-    finally {
-      console.log( 'success' );
-      // setOpenOptions( false );
-      router.replace( router.asPath );
-    }
-  };
-
-  const adultEvo = async () => {
-    try {
-      const response = await axios({
-        method: 'put',
-        url: '/api/digipet/adultEvo',
-        withCredentials: true,
-        data: {
-          digimonId: myPet._id
-        },
-      });
-  
-      return response.data;
-    }
-    catch( error ) {
-      console.log( error );
-    }
-    finally {
-      console.log( 'success' );
-      // setOpenOptions( false );
-      router.replace( router.asPath );
-    }
-  };
-
-  const perfectEvo = async () => {
-    try {
-      const response = await axios({
-        method: 'put',
-        url: '/api/digipet/perfectEvo',
-        withCredentials: true,
-        data: {
-          digimonId: myPet._id
-        },
-      });
-  
-      return response.data;
-    }
-    catch( error ) {
-      console.log( error );
-    }
-    finally {
-      console.log( 'success' );
-      // setOpenOptions( false );
-      router.replace( router.asPath );
-    }
-  };
-
-  const ultimateEvo = async () => {
-    try {
-      const response = await axios({
-        method: 'put',
-        url: '/api/digipet/ultimateEvo',
-        withCredentials: true,
-        data: {
-          digimonId: myPet._id
-        },
-      });
-  
-      return response.data;
-    }
-    catch( error ) {
-      console.log( error );
-    }
-    finally {
-      console.log( 'success' );
-      // setOpenOptions( false );
-      router.replace( router.asPath );
-    }
-  };
-
   const deletePet = async () => {
     try {
       const response = await axios({
@@ -228,7 +90,7 @@ export default function Home({ myPet }) {
         </Button>
         <Text>Pet</Text>
         {
-          myPet ? <MainScreen pet={ myPet.digimonData } />
+          myPet ? <MainScreen pet={ myPet } />
           : null
         }
 
@@ -246,54 +108,6 @@ export default function Home({ myPet }) {
           </Button>
 
           <Button
-            onClick={ () => baby1Evo() }
-            variant='outline'
-            colorScheme='red.500'
-          >
-            Baby 1 Evolution
-          </Button>
-
-          <Button
-            onClick={ () => baby2Evo() }
-            variant='outline'
-            colorScheme='red.500'
-          >
-            Baby 2 Evolution
-          </Button>
-
-          <Button
-            onClick={ () => childEvo() }
-            variant='outline'
-            colorScheme='red.500'
-          >
-            Child Evolution
-          </Button>
-
-          <Button
-            onClick={ () => adultEvo() }
-            variant='outline'
-            colorScheme='red.500'
-          >
-            Adult Evolution
-          </Button>
-
-          <Button
-            onClick={ () => perfectEvo() }
-            variant='outline'
-            colorScheme='red.500'
-          >
-            Perfect Evolution
-          </Button>
-
-          <Button
-            onClick={ () => ultimateEvo() }
-            variant='outline'
-            colorScheme='red.500'
-          >
-            Ultimate Evolution
-          </Button>
-
-          <Button
             onClick={ () => deletePet() }
             variant='outline'
             colorScheme='red.500'
@@ -301,7 +115,7 @@ export default function Home({ myPet }) {
             Delete
           </Button>
           <Button
-            onClick={ () => console.log( Math.floor( Math.random() * myPet.digimonData.nextStage.length ) ) }
+            onClick={ () => console.log( myPet ) }
             variant='outline'
             colorScheme='red.500'
           >

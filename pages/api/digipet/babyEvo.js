@@ -1,7 +1,7 @@
 import dbConnect from '../../../lib/mongooseConnect';
 import DigiPet from '../../../model/digipet';
 
-import { baby1 } from '../../../assets/baby';
+import { baby } from '../../../assets/baby';
 
 export default async function handler( req, res ) {
   try {
@@ -9,8 +9,8 @@ export default async function handler( req, res ) {
       await dbConnect();
 
       const digipet = await DigiPet.findById( req.body.digimonId );
-      let found = baby1.find( digimon => digimon.species = digipet.digimonData.nextStage );
-      digipet.digimonData = found;
+      const evo = baby.find(( digimon ) => digimon.species === digipet.digimonData.nextStage );
+      digipet.digimonData = evo;
 
       digipet.save();
 

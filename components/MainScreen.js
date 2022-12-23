@@ -5,13 +5,14 @@ import { BabyIdle } from './idle/BabyIdle';
 import { NormalIdle } from './idle/NormalIdle';
 
 export const MainScreen = ({ pet }) => {
-  if( pet.stage === 'digitama' ) {
+
+  if( pet.digimonData.stage === 'digitama' ) {
     return <Egg digitama={ pet } />
   }
-  if( pet.stage === 'baby1' || pet.stage === 'baby2' ) {
+  if( pet.digimonData.stage === 'baby1' || pet.digimonData.stage === 'baby2' ) {
     return <BabyIdle digimon={ pet } />
   }
-  if( pet.stage === 'child' || pet.stage === 'adult' || pet.stage === 'perfect' || pet.stage === 'ultimate' ) {
+  if( pet.digimonData.stage === 'child' || pet.digimonData.stage === 'adult' || pet.digimonData.stage === 'perfect' || pet.digimonData.stage === 'ultimate' ) {
     return <NormalIdle digimon={ pet } />;
   }
   return null;

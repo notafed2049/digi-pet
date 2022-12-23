@@ -1,4 +1,4 @@
-export const baby1 = [
+export const baby = [
   {
     species: 'Botamon',
     sprite: '/sprite/bota/',
@@ -8,9 +8,6 @@ export const baby1 = [
     borderTheme: 'black',
     bgTheme: 'white',
   },
-]
-
-export const baby2 = [
   {
     species: 'Koromon',
     sprite: '/sprite/koro/',

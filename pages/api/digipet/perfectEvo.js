@@ -13,9 +13,6 @@ export default async function handler( req, res ) {
       const evo = perfect.find(( digimon ) => digimon.species === digipet.digimonData.nextStage[ randomNum ] );
       digipet.digimonData = evo;
 
-      console.log({ evo });
-      console.log('randomNum:', randomNum);
-
       digipet.save();
 
       return res.status( 200 ).json({ message: 'perfect evo complete' });

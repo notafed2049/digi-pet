@@ -13,9 +13,6 @@ export default async function handler( req, res ) {
       const evo = adult.find(( digimon ) => digimon.species === digipet.digimonData.nextStage[ randomNum ] );
       digipet.digimonData = evo;
 
-      console.log({ evo });
-      console.log('randomNum:', randomNum);
-
       digipet.save();
 
       return res.status( 200 ).json({ message: 'adult evo complete' });

@@ -9,8 +9,8 @@ export default async function handler( req, res ) {
       await dbConnect();
 
       const digipet = await DigiPet.findById( req.body.digimonId );
-      let found = child.find( digimon => digimon.species = digipet.digimonData.nextStage );
-      digipet.digimonData = found;
+      const evo = child.find(( digimon ) => digimon.species === digipet.digimonData.nextStage );
+      digipet.digimonData = evo;
 
       digipet.save();
 
