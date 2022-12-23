@@ -43,7 +43,6 @@ export default function Home({ myPet }) {
       console.log( error );
     }
     finally {
-      console.log( 'success' );
       // setOpenOptions( false );
       router.replace( router.asPath );
     }
@@ -66,7 +65,6 @@ export default function Home({ myPet }) {
       console.log( error );
     }
     finally {
-      console.log( 'success' );
       // setOpenOptions( false );
       router.replace( router.asPath );
     }

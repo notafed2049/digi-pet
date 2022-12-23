@@ -4,7 +4,7 @@ export const adult = [
     sprite: '/sprite/grey/',
     artwork: '/artwork/grey.png',
     stage: 'adult',
-    nextStage: [ 'Metalgreymon', 'MasterTyranomon', 'Skullgreymon' ],
+    nextStage: [ 'Metalgreymon', 'Mastertyranomon', 'Skullgreymon' ],
     borderTheme: 'orange.900',
     bgTheme: 'orange.500',
     //stats
@@ -17,7 +17,7 @@ export const adult = [
     sprite: '/sprite/tyrano/',
     artwork: '/artwork/tyrano.png',
     stage: 'adult',
-    nextStage: [ 'Metalgreymon', 'MasterTyranomon', 'Skullgreymon' ],
+    nextStage: [ 'Metalgreymon', 'Mastertyranomon', 'Skullgreymon' ],
     borderTheme: 'red.900',
     bgTheme: 'red.500',
     //stats
@@ -30,7 +30,7 @@ export const adult = [
     sprite: '/sprite/devidra/',
     artwork: '/artwork/devi.png',
     stage: 'adult',
-    nextStage: [ 'Metalgreymon', 'MasterTyranomon', 'Skullgreymon' ],
+    nextStage: [ 'Metalgreymon', 'Mastertyranomon', 'Skullgreymon' ],
     borderTheme: 'purple.900',
     bgTheme: 'purple.500',
     //stats

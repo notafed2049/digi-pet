@@ -78,7 +78,6 @@ export const Egg= ({ digitama }) => {
       console.log( error );
     }
     finally {
-      console.log( 'success' );
       // setOpenOptions( false );
       router.replace( router.asPath );
     }

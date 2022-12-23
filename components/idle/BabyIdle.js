@@ -96,7 +96,6 @@ export const BabyIdle = ({ digimon }) => {
       console.log( error );
     }
     finally {
-      console.log( 'success' );
       // setOpenOptions( false );
       router.replace( router.asPath );
     }
@@ -119,7 +118,6 @@ export const BabyIdle = ({ digimon }) => {
       console.log( error );
     }
     finally {
-      console.log( 'success' );
       // setOpenOptions( false );
       router.replace( router.asPath );
     }

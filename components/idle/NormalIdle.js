@@ -104,7 +104,6 @@ export const NormalIdle = ({ digimon }) => {
       console.log( error );
     }
     finally {
-      console.log( 'success' );
       // setOpenOptions( false );
       router.replace( router.asPath );
     }
@@ -127,7 +126,6 @@ export const NormalIdle = ({ digimon }) => {
       console.log( error );
     }
     finally {
-      console.log( 'success' );
       // setOpenOptions( false );
       router.replace( router.asPath );
     }
@@ -150,7 +148,6 @@ export const NormalIdle = ({ digimon }) => {
       console.log( error );
     }
     finally {
-      console.log( 'success' );
       // setOpenOptions( false );
       router.replace( router.asPath );
     }
