@@ -1,13 +1,15 @@
+import '@fontsource/patua-one';
+import '@fontsource/press-start-2p';
+
 import { ChakraProvider, extendTheme } from '@chakra-ui/react';
 import { SessionProvider } from "next-auth/react"
 
 import { Layout } from '../components/Layout';
 
 const theme = extendTheme({
-  // fonts: {
-  //   heading: `'Alfa Slab One', alfa-slab-one`,
-  //   body: `'Alfa Slab One', alfa-slab-one`,  "Press Start 2P", cursive, "Patua One", cursive;
-  // },
+  fonts: {
+    body: `"Patua One", cursive` //`"Press Start 2P", cursive`
+  },
   styles: {
     global: {
       'html, body': {

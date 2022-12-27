@@ -1,4 +1,4 @@
-import { useSession, signOut } from 'next-auth/react';
+import { useSession } from 'next-auth/react';
 import { unstable_getServerSession } from 'next-auth';
 import axios from 'axios';
 import { useRouter } from 'next/router';
@@ -18,7 +18,7 @@ import {
   Flex,
   Button,
   Text
- } from "@chakra-ui/react"
+} from "@chakra-ui/react"
 
 export default function Home({ myPet }) {
   const { data: session } = useSession();
@@ -108,18 +108,6 @@ export default function Home({ myPet }) {
             colorScheme='red.500'
           >
             Click Me
-          </Button>
-          <Text
-            marginTop='20px'
-          >
-            Signed in as { session.user.email }
-          </Text>
-          <Button
-            onClick={ () => signOut({ callbackUrl: '/login' }) }
-            variant='outline'
-            colorScheme='red.500'
-          >
-            Sign Out
           </Button>
         </Flex>
 
