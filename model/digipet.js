@@ -10,11 +10,11 @@ const DigiPetSchema = new Schema({
   //factory stats
   digimonData: { type: Object },
   //unique stats
-  careMistake: { type: Number },
+  mistake: { type: Number },
   overFeed: { type: Number },
-  winPercentage: { type: Number },
   effort: { type: Number },
   battles: { type: Number },
+  battlesWon: { type: Number },
   evoLine: [{ type: String }],
   birthday: { type: Date }
 });

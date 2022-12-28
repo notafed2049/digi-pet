@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { signOut } from 'next-auth/react';
+import { useRouter } from 'next/router';
 
 import {
   Flex,
-  Text,
   Button,
   IconButton,
   Icon,
@@ -22,6 +22,8 @@ import {
 } from 'react-icons/gi'
 
 export const MobileNav = () => {
+  const router = useRouter();
+
   const [ navOpen, setNavOpen ] = useState( false );
 
   const handleOpenNav = () => {
@@ -33,12 +35,17 @@ export const MobileNav = () => {
     }
   };
 
-
+  const handleNav = ( link ) => {
+    router.push( link );
+    setNavOpen( false );
+  };
 
   return (
     <Flex
       direction='column'
       width='100%'
+      borderBottom='1px solid'
+      borderColor='red.500'
     >
       <Flex
         direction='row'
@@ -46,9 +53,12 @@ export const MobileNav = () => {
         alignItems='center'
         padding='5px 10px'
       >
-        <Text>
-          digiPET
-        </Text>
+        <Button
+          onClick={ () => router.push('/') }
+          variant='ghost'
+        >
+          digiPet
+        </Button>
         <IconButton
           onClick={ () => handleOpenNav() }
           size='lg'
@@ -60,43 +70,58 @@ export const MobileNav = () => {
       {
         navOpen ?
         <Flex
-          border='1px solid gold'
+          padding='5px'
+          borderTop='1px solid'
+          borderColor='red.500'
         >
           <Grid
             width='100%'
-            border='1px solid red'
             templateColumns='repeat( 4, 1fr )'
+            gap='5px'
           >
             <IconButton
+              onClick={ () => handleNav( '/stats' ) }
               size='lg'
               icon={ <Icon as={ GiWeightScale } boxSize='30px' /> }
               backgroundColor='transparent'
+              border='1px solid'
+              borderColor='red.500'
             />
             <IconButton
               size='lg'
               icon={ <Icon as={ GiMeat } boxSize='30px' /> }
               backgroundColor='transparent'
+              border='1px solid'
+              borderColor='red.500'
             />
             <IconButton
               size='lg'
               icon={ <Icon as={ GiPunchingBag } boxSize='30px' /> }
               backgroundColor='transparent'
+              border='1px solid'
+              borderColor='red.500'
             />
             <IconButton
               size='lg'
               icon={ <Icon as={ GiPunchBlast } boxSize='30px' /> }
               backgroundColor='transparent'
+              border='1px solid'
+              borderColor='red.500'
             />
             <IconButton
               size='lg'
               icon={ <Icon as={ FaPoop } boxSize='30px' /> }
               backgroundColor='transparent'
+              border='1px solid'
+              borderColor='red.500'
             />
             <IconButton
               onClick={ () => signOut({ callbackUrl: '/login' }) }
               size='lg'
               icon={ <Icon as={ MdLogout } boxSize='30px' /> }
               backgroundColor='transparent'
+              border='1px solid'
+              borderColor='red.500'
             />
           </Grid>
         </Flex>
