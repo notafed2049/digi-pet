@@ -8,7 +8,12 @@ import { Layout } from '../components/Layout';
 
 const theme = extendTheme({
   fonts: {
-    body: `"Patua One", cursive` //`"Press Start 2P", cursive`
+    body: `"Patua One", cursive`,
+  },
+  textStyles: {
+    digital: {
+      fontFamily: `"Press Start 2P", cursive`
+    }
   },
   styles: {
     global: {

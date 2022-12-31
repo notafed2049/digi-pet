@@ -99,13 +99,6 @@ export default function Home({ myPet }) {
           >
             Delete
           </Button>
-          <Button
-            onClick={ () => console.log( myPet ) }
-            variant='outline'
-            colorScheme='red.500'
-          >
-            Click Me
-          </Button>
         </Flex>
 
       </Flex>

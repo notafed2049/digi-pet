@@ -21,13 +21,60 @@ export const Stats = ({ digimon }) => {
       templateColumns='repeat(2, 1fr)'
       padding='10px'
       gap='5px'
+      backgroundColor={ digimon.digimonData.bgTheme }
+      border='5px double'
+      borderRadius='5px'
+      borderColor={ digimon.digimonData.borderTheme }
     >
-      <Text>{ `HP: ${digimon.digimonData.HP}` }</Text>
-      <Text>{ `AP: ${digimon.digimonData.AP}` }</Text>
-      <Text>{ `DP: ${digimon.digimonData.DP}` }</Text>
-      <Text>{ `Stage: ${digimon.digimonData.stage}` }</Text>
-      <Text>{ `Age: ${ returnAge() } Hours` }</Text>
-      <Text>{ `Battles: ${ digimon.battles }` }</Text>
+      <Text 
+        textStyle='digital'
+        fontSize='10px'
+        color={ digimon.digimonData.borderTheme }
+      >
+        { `HP: ${digimon.digimonData.HP}` }
+      </Text>
+      <Text 
+        textStyle='digital'
+        fontSize='10px'
+        color={ digimon.digimonData.borderTheme }
+      >
+        { `AP: ${digimon.digimonData.AP}` }
+      </Text>
+      <Text 
+        textStyle='digital'
+        fontSize='10px'
+        color={ digimon.digimonData.borderTheme }
+      >
+        { `DP: ${digimon.digimonData.DP}` }
+      </Text>
+      <Text 
+        textStyle='digital'
+        fontSize='10px'
+        color={ digimon.digimonData.borderTheme }
+      >
+        { `Battles: ${ digimon.battles }` }
+      </Text>
+      <Text 
+        textStyle='digital'
+        fontSize='10px'
+        color={ digimon.digimonData.borderTheme }
+      >
+        { `Win %: ${ ( digimon.battles/100 ) * digimon.battlesWon } %` }
+      </Text>
+      <Text 
+        textStyle='digital'
+        fontSize='10px'
+        color={ digimon.digimonData.borderTheme }
+      >
+        { `Age: ${ returnAge() } HOURS` }
+      </Text>
+      <Text 
+        textStyle='digital'
+        fontSize='10px'
+        color={ digimon.digimonData.borderTheme }
+      >
+        { `Stage: ${digimon.digimonData.stage}` }
+      </Text>
     </Grid>
   )
 };

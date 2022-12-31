@@ -18,8 +18,6 @@ export default function Home({ myPet }) {
   const { data: session } = useSession();
 
   if( session ) {
-    console.log({ myPet });
-
     return (
       <Flex
         direction='column'

@@ -12,11 +12,12 @@ export default async function handler( req, res ) {
         digimonData: req.body.digimonData,
         evoLine: [], //someArray
         birthday: new Date(),
-        careMistake: 0,
+        mistake: 0,
         overFeed: 0,
         winPercentage: 0,
         effort: 0,
         battles: 0,
+        battlesWon: 0
       });
 
       newPet.save();
