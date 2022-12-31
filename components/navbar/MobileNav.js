@@ -62,8 +62,9 @@ export const MobileNav = () => {
         <IconButton
           onClick={ () => handleOpenNav() }
           size='lg'
-          icon={ navOpen ? <CloseIcon color='red.500' /> : <HamburgerIcon color='red.500' /> }
-          backgroundColor='transparent'
+          icon={ navOpen ? <CloseIcon /> : <HamburgerIcon boxSize='30px' /> }
+          variant='outline'
+          colorScheme='red.500'
         />
       </Flex>
 

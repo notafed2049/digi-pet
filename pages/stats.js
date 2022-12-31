@@ -5,6 +5,9 @@ import dbConnect from '../lib/mongooseConnect';
 import { authOptions } from './api/auth/[...nextauth]';
 import DigiPet from '../model/digipet';
 
+import { MainScreen } from '../components/MainScreen';
+import { Stats } from '../components/Stats';
+
 import {
   Flex,
   Button,
@@ -18,7 +21,16 @@ export default function Home({ myPet }) {
     console.log({ myPet });
 
     return (
-      <Flex>Hello World</Flex>
+      <Flex
+        direction='column'
+      >
+        <Text>Stats</Text>
+        {
+          myPet ? <MainScreen pet={ myPet } />
+          : null
+        }
+        <Stats digimon={ myPet } />
+      </Flex>
     )
   }
 }

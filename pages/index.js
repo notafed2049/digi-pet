@@ -10,9 +10,6 @@ import DigiPet from '../model/digipet';
 import { egg } from '../assets/egg';
 
 import { MainScreen } from '../components/MainScreen';
-import { Train } from "../components/Train";
-import { Fight } from "../components/Fight";
-import { Sleep } from "../components/Sleep";
 
 import {
   Flex,
