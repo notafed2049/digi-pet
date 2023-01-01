@@ -10,6 +10,7 @@ export const ultimate = [
     DP: 45,
     HP: 14,
     AP: 5,
+    weight: 30
   },
   {
     species: 'Mugendramon',
@@ -22,6 +23,7 @@ export const ultimate = [
     DP: 55,
     HP: 18,
     AP: 8,
+    weight: 40
   },
   {
     species: 'Gaiomon',
@@ -34,6 +36,7 @@ export const ultimate = [
     DP: 60,
     HP: 10,
     AP: 9,
+    weight: 58
   },
   {
     species: 'Ulforceveedramon',
@@ -46,5 +49,6 @@ export const ultimate = [
     DP: 50,
     HP: 14,
     AP: 7,
+    weight: 30
   },
 ]

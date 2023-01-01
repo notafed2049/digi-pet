@@ -19,7 +19,7 @@ const theme = extendTheme({
     global: {
       'html, body': {
         backgroundColor: 'gray.700',
-        color: 'red.500'
+        color: 'gray.400'
       }
     }
   }

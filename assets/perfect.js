@@ -11,6 +11,7 @@ export const perfect = [
     DP: 35,
     HP: 12,
     AP: 4,
+    weight: 40
   },
   {
     species: 'Mastertyranomon',
@@ -24,6 +25,7 @@ export const perfect = [
     DP: 35,
     HP: 10,
     AP: 3,
+    weight: 30
   },
   {
     species: 'Skullgreymon',
@@ -37,6 +39,7 @@ export const perfect = [
     DP: 30,
     HP: 16,
     AP: 4,
+    weight: 20
   },
   {
     species: 'Aeroveedramon',
@@ -49,5 +52,6 @@ export const perfect = [
     DP: 35,
     HP: 12,
     AP: 4,
+    weight: 30
   },
 ]

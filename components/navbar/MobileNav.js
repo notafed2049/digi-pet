@@ -45,7 +45,7 @@ export const MobileNav = () => {
       direction='column'
       width='100%'
       borderBottom='1px solid'
-      borderColor='red.500'
+      borderColor='gray.400'
     >
       <Flex
         direction='row'
@@ -56,6 +56,7 @@ export const MobileNav = () => {
         <Button
           onClick={ () => router.push('/') }
           variant='ghost'
+          color='gray.400'
         >
           digiPet
         </Button>
@@ -64,7 +65,7 @@ export const MobileNav = () => {
           size='lg'
           icon={ navOpen ? <CloseIcon /> : <HamburgerIcon boxSize='30px' /> }
           variant='outline'
-          colorScheme='red.500'
+          colorScheme='gray.400'
         />
       </Flex>
 
@@ -73,7 +74,7 @@ export const MobileNav = () => {
         <Flex
           padding='5px'
           borderTop='1px solid'
-          borderColor='red.500'
+          borderColor='gray.400'
         >
           <Grid
             width='100%'
@@ -86,35 +87,36 @@ export const MobileNav = () => {
               icon={ <Icon as={ GiWeightScale } boxSize='30px' /> }
               backgroundColor='transparent'
               border='1px solid'
-              borderColor='red.500'
+              borderColor='gray.400'
             />
             <IconButton
               size='lg'
               icon={ <Icon as={ GiMeat } boxSize='30px' /> }
               backgroundColor='transparent'
               border='1px solid'
-              borderColor='red.500'
+              borderColor='gray.400'
             />
             <IconButton
+              onClick={ () => handleNav( '/train' ) }
               size='lg'
               icon={ <Icon as={ GiPunchingBag } boxSize='30px' /> }
               backgroundColor='transparent'
               border='1px solid'
-              borderColor='red.500'
+              borderColor='gray.400'
             />
             <IconButton
               size='lg'
               icon={ <Icon as={ GiPunchBlast } boxSize='30px' /> }
               backgroundColor='transparent'
               border='1px solid'
-              borderColor='red.500'
+              borderColor='gray.400'
             />
             <IconButton
               size='lg'
               icon={ <Icon as={ FaPoop } boxSize='30px' /> }
               backgroundColor='transparent'
               border='1px solid'
-              borderColor='red.500'
+              borderColor='gray.400'
             />
             <IconButton
               onClick={ () => signOut({ callbackUrl: '/login' }) }
@@ -122,7 +124,7 @@ export const MobileNav = () => {
               icon={ <Icon as={ MdLogout } boxSize='30px' /> }
               backgroundColor='transparent'
               border='1px solid'
-              borderColor='red.500'
+              borderColor='gray.400'
             />
           </Grid>
         </Flex>

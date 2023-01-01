@@ -7,6 +7,7 @@ export const baby = [
     nextStage: 'Koromon',
     borderTheme: 'black',
     bgTheme: 'white',
+    weight: 5,
   },
   {
     species: 'Koromon',
@@ -16,5 +17,6 @@ export const baby = [
     nextStage: 'Agumon',
     borderTheme: 'pink.900',
     bgTheme: 'pink.400',
+    weight: 10
   }
 ];

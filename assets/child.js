@@ -11,5 +11,6 @@ export const child = [
     DP: 10,
     HP: 3,
     AP: 2,
+    weight: 15
   }
 ]

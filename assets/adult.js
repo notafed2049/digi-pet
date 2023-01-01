@@ -11,6 +11,7 @@ export const adult = [
     DP: 25,
     HP: 5,
     AP: 3,
+    weight: 30
   },
   {
     species: 'Tyranomon',
@@ -24,6 +25,7 @@ export const adult = [
     DP: 20,
     HP: 5,
     AP: 2,
+    weight: 20
   },
   {
     species: 'Devidramon',
@@ -37,6 +39,7 @@ export const adult = [
     DP: 15,
     HP: 4,
     AP: 3,
+    weight: 30
   },
   {
     species: 'Veedramon',
@@ -49,5 +52,6 @@ export const adult = [
     DP: 25,
     HP: 5,
     AP: 3,
+    weight: 25
   },
 ]

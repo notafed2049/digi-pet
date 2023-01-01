@@ -5,11 +5,9 @@ import dbConnect from '../lib/mongooseConnect';
 import { authOptions } from './api/auth/[...nextauth]';
 import DigiPet from '../model/digipet';
 
-import { MainScreen } from '../components/MainScreen';
-import { Stats } from '../components/stats/Stats';
-
 import {
   Flex,
+  Button,
   Text
 } from "@chakra-ui/react"
 
@@ -17,16 +15,13 @@ export default function Home({ myPet }) {
   const { data: session } = useSession();
 
   if( session ) {
+    console.log({ myPet });
+
     return (
       <Flex
         direction='column'
       >
-        <Text>Stats</Text>
-        {
-          myPet ? <MainScreen pet={ myPet } />
-          : null
-        }
-        <Stats digimon={ myPet } />
+        <Text>Train</Text>
       </Flex>
     )
   }
