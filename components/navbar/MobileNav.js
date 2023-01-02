@@ -40,6 +40,11 @@ export const MobileNav = () => {
     setNavOpen( false );
   };
 
+  const handleReturnHome = () => {
+    router.push( '/' );
+    setNavOpen( false );
+  };
+
   return (
     <Flex
       direction='column'
@@ -54,7 +59,7 @@ export const MobileNav = () => {
         padding='5px 10px'
       >
         <Button
-          onClick={ () => router.push('/') }
+          onClick={ () => handleReturnHome() }
           variant='ghost'
           color='gray.400'
         >

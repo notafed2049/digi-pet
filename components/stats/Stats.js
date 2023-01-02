@@ -54,6 +54,12 @@ export const Stats = ({ digimon }) => {
           para={ `Win %: ${ ( digimon.battles/100 ) * digimon.battlesWon } %` }
           cTheme={ digimon.digimonData.borderTheme }
         />
+      </Grid>
+      <Grid
+        gap='5px'
+        marginTop='5px'
+        alignSelf='center'
+      >
         <StatPara 
           para={ `Age: ${ returnAge() } HOURS` }
           cTheme={ digimon.digimonData.borderTheme }
@@ -64,12 +70,6 @@ export const Stats = ({ digimon }) => {
           cTheme={ digimon.digimonData.borderTheme }
           alignSelf='center'
         />
-      </Grid>
-      <Grid
-        gap='5px'
-        marginTop='5px'
-        alignSelf='center'
-      >
         <StatPara 
           para={ `Stage: ${digimon.digimonData.stage}` }
           cTheme={ digimon.digimonData.borderTheme }

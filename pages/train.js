@@ -1,9 +1,12 @@
 import { useSession } from 'next-auth/react';
 import { unstable_getServerSession } from 'next-auth';
+import { useState } from 'react';
 
 import dbConnect from '../lib/mongooseConnect';
 import { authOptions } from './api/auth/[...nextauth]';
 import DigiPet from '../model/digipet';
+
+import { Training } from '../components/train/Training';
 
 import {
   Flex,
@@ -14,14 +17,16 @@ import {
 export default function Home({ myPet }) {
   const { data: session } = useSession();
 
+  const [ trainingState, setTrainingState ] = useState( 'idle' ); // idle, training, complete
+
   if( session ) {
-    console.log({ myPet });
 
     return (
       <Flex
         direction='column'
       >
         <Text>Train</Text>
+        <Training digimon={ myPet } state={ trainingState } setState={ setTrainingState } />
       </Flex>
     )
   }
