@@ -12,14 +12,7 @@ import {
 
 import { CloseIcon, HamburgerIcon } from '@chakra-ui/icons';
 
-import { FaPoop } from 'react-icons/fa';
 import { MdLogout } from 'react-icons/md';
-import {
-  GiPunchingBag,
-  GiMeat,
-  GiWeightScale,
-  GiPunchBlast
-} from 'react-icons/gi'
 
 export const MobileNav = () => {
   const router = useRouter();
@@ -33,11 +26,6 @@ export const MobileNav = () => {
     else if( !navOpen ) {
       setNavOpen( true );
     }
-  };
-
-  const handleNav = ( link ) => {
-    router.push( link );
-    setNavOpen( false );
   };
 
   const handleReturnHome = () => {
@@ -86,43 +74,6 @@ export const MobileNav = () => {
             templateColumns='repeat( 4, 1fr )'
             gap='5px'
           >
-            <IconButton
-              onClick={ () => handleNav( '/stats' ) }
-              size='lg'
-              icon={ <Icon as={ GiWeightScale } boxSize='30px' /> }
-              backgroundColor='transparent'
-              border='1px solid'
-              borderColor='gray.400'
-            />
-            <IconButton
-              size='lg'
-              icon={ <Icon as={ GiMeat } boxSize='30px' /> }
-              backgroundColor='transparent'
-              border='1px solid'
-              borderColor='gray.400'
-            />
-            <IconButton
-              onClick={ () => handleNav( '/train' ) }
-              size='lg'
-              icon={ <Icon as={ GiPunchingBag } boxSize='30px' /> }
-              backgroundColor='transparent'
-              border='1px solid'
-              borderColor='gray.400'
-            />
-            <IconButton
-              size='lg'
-              icon={ <Icon as={ GiPunchBlast } boxSize='30px' /> }
-              backgroundColor='transparent'
-              border='1px solid'
-              borderColor='gray.400'
-            />
-            <IconButton
-              size='lg'
-              icon={ <Icon as={ FaPoop } boxSize='30px' /> }
-              backgroundColor='transparent'
-              border='1px solid'
-              borderColor='gray.400'
-            />
             <IconButton
               onClick={ () => signOut({ callbackUrl: '/login' }) }
               size='lg'

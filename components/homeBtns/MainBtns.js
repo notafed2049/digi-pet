@@ -2,14 +2,25 @@ import React from 'react';
 import axios from 'axios';
 import { useSession } from 'next-auth/react';
 import { useRouter } from 'next/router';
+import NextLink from 'next/link';
 
 import { egg } from '../../assets/egg';
 import { EvoBtns } from './EvoBtns';
 
 import {
   Flex,
-  Button
+  Grid,
+  Button,
+  Icon
 } from '@chakra-ui/react';
+
+import { FaPoop } from 'react-icons/fa';
+import {
+  GiPunchingBag,
+  GiMeat,
+  GiWeightScale,
+  GiPunchBlast
+} from 'react-icons/gi';
 
 export const MainBtns = ({ digimon }) => {
   const { data: session } = useSession();
@@ -65,6 +76,57 @@ export const MainBtns = ({ digimon }) => {
       justifyContent='center'
       padding='10px'
     >
+      <Grid
+        templateColumns='repeat( 2, 1fr )'
+        gap='5px'
+        marginBottom='10px'
+      >
+        <Button
+          as={ NextLink }
+          href='/stats'
+          variant='outline'
+          colorScheme='gray.400'
+          leftIcon={ <Icon as={ GiWeightScale } boxSize='30px' /> }
+        >
+          Stats
+        </Button>
+        <Button
+          as={ NextLink }
+          href='/train'
+          variant='outline'
+          colorScheme='gray.400'
+          leftIcon={ <Icon as={ GiPunchingBag } boxSize='30px' /> }
+        >
+          Train
+        </Button>
+        <Button
+          as={ NextLink }
+          href='/eat'
+          variant='outline'
+          colorScheme='gray.400'
+          leftIcon={ <Icon as={ GiMeat } boxSize='30px' /> }
+        >
+          Eat
+        </Button>
+        <Button
+          as={ NextLink }
+          href='/train'
+          variant='outline'
+          colorScheme='gray.400'
+          leftIcon={ <Icon as={ GiPunchBlast } boxSize='30px' /> }
+        >
+          Fight
+        </Button>
+        <Button
+          as={ NextLink }
+          href='/train'
+          variant='outline'
+          colorScheme='gray.400'
+          leftIcon={ <Icon as={ FaPoop } boxSize='30px' /> }
+        >
+          Poop
+        </Button>
+      </Grid>
       {
         digimon ?
           <Flex

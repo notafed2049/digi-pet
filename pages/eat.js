@@ -1,37 +1,39 @@
 import { useSession } from 'next-auth/react';
 import { unstable_getServerSession } from 'next-auth';
-import { useRouter } from 'next/router';
 
 import dbConnect from '../lib/mongooseConnect';
 import { authOptions } from './api/auth/[...nextauth]';
 import DigiPet from '../model/digipet';
 
-import { MainScreen } from '../components/MainScreen';
-import { MainBtns } from '../components/homeBtns/MainBtns';
-
 import {
   Flex,
-  Text
-} from "@chakra-ui/react"
+  Text,
+  Image,
+} from '@chakra-ui/react';
 
 export default function Home({ myPet }) {
   const { data: session } = useSession();
-  const router = useRouter();
 
   if( session ) {
-
     return (
       <Flex
         direction='column'
       >
-        <Text>Pet</Text>
-        {
-          myPet ? <MainScreen pet={ myPet } />
-          : null
-        }
-
-        <MainBtns digimon={ myPet } />
-
+        <Text>Eat</Text>
+        <Image
+          src='/eating.gif'
+          alt='eat'
+          border='5px double silver'
+          borderRadius='10px'
+          margin='10px 20px'
+        />
+        <Text
+          textStyle='digital'
+          fontSize='10px'
+          textAlign='center'
+        >
+          Eating in Progress...
+        </Text>
       </Flex>
     )
   }
