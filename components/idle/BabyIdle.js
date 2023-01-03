@@ -1,6 +1,4 @@
 import React from 'react';
-import axios from 'axios';
-import { useRouter } from 'next/router';
 
 import { 
   Box,
@@ -13,8 +11,6 @@ import { motion } from 'framer-motion';
 
 //TODO complete this styling
 export const BabyIdle = ({ digimon }) => {
-  const router = useRouter();
-
   const idleKeyframe = keyframes`
     0% {
       background: url( ${ digimon.digimonData.sprite }idle1.webp ) no-repeat center/80%;
@@ -79,50 +75,6 @@ export const BabyIdle = ({ digimon }) => {
     ${ movingKeyframe } 30s steps(1, start) infinite
   `;
 
-  const babyEvo = async () => {
-    try {
-      const response = await axios({
-        method: 'put',
-        url: '/api/digipet/babyEvo',
-        withCredentials: true,
-        data: {
-          digimonId: digimon._id,
-        },
-      });
-  
-      return response.data;
-    }
-    catch( error ) {
-      console.log( error );
-    }
-    finally {
-      // setOpenOptions( false );
-      router.replace( router.asPath );
-    }
-  };
-
-  const childEvo = async () => {
-    try {
-      const response = await axios({
-        method: 'put',
-        url: '/api/digipet/childEvo',
-        withCredentials: true,
-        data: {
-          digimonId: digimon._id,
-        },
-      });
-  
-      return response.data;
-    }
-    catch( error ) {
-      console.log( error );
-    }
-    finally {
-      // setOpenOptions( false );
-      router.replace( router.asPath );
-    }
-  };
-
   return (
     <Flex
       direction='column'
@@ -142,26 +94,6 @@ export const BabyIdle = ({ digimon }) => {
           height='33vw'
         />
       </Flex>
-      
-      {
-        digimon.digimonData.stage === 'baby1' ?
-          <Button
-            onClick={ () => babyEvo() }
-            variant='outline'
-            colorScheme='red.500'
-          >
-            Baby 2 Evolution
-          </Button>
-        : digimon.digimonData.stage === 'baby2' ?
-          <Button
-            onClick={ () => childEvo() }
-            variant='outline'
-            colorScheme='red.500'
-          >
-            Child Evolution
-          </Button>
-        : null
-      }
     </Flex>
   );
 };

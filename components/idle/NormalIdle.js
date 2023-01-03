@@ -1,6 +1,4 @@
 import React from 'react';
-import axios from 'axios';
-import { useRouter } from 'next/router';
 
 import {
   Box,
@@ -13,8 +11,6 @@ import { motion } from 'framer-motion';
 
 //TODO complete this styling
 export const NormalIdle = ({ digimon }) => {
-  const router = useRouter();
-
   const walkingKeyframe = keyframes`
     0% {
       background: url( ${ digimon.digimonData.sprite }walk1.webp ) no-repeat center/100%;
@@ -87,72 +83,6 @@ export const NormalIdle = ({ digimon }) => {
     ${ movingKeyframe } 35s steps(1, start) infinite
   `;
 
-  const adultEvo = async () => {
-    try {
-      const response = await axios({
-        method: 'put',
-        url: '/api/digipet/adultEvo',
-        withCredentials: true,
-        data: {
-          digimonId: digimon._id
-        },
-      });
-  
-      return response.data;
-    }
-    catch( error ) {
-      console.log( error );
-    }
-    finally {
-      // setOpenOptions( false );
-      router.replace( router.asPath );
-    }
-  };
-
-  const perfectEvo = async () => {
-    try {
-      const response = await axios({
-        method: 'put',
-        url: '/api/digipet/perfectEvo',
-        withCredentials: true,
-        data: {
-          digimonId: digimon._id
-        },
-      });
-  
-      return response.data;
-    }
-    catch( error ) {
-      console.log( error );
-    }
-    finally {
-      // setOpenOptions( false );
-      router.replace( router.asPath );
-    }
-  };
-
-  const ultimateEvo = async () => {
-    try {
-      const response = await axios({
-        method: 'put',
-        url: '/api/digipet/ultimateEvo',
-        withCredentials: true,
-        data: {
-          digimonId: digimon._id
-        },
-      });
-  
-      return response.data;
-    }
-    catch( error ) {
-      console.log( error );
-    }
-    finally {
-      // setOpenOptions( false );
-      router.replace( router.asPath );
-    }
-  };
-
   return (
     <Flex
       minWidth='100vw'
@@ -172,33 +102,6 @@ export const NormalIdle = ({ digimon }) => {
           animation={ animation }
         />
       </Flex>
-      {
-        digimon.digimonData.stage === 'child' ?
-          <Button
-            onClick={ () => adultEvo() }
-            variant='outline'
-            colorScheme='red.500'
-          >
-            Adult Evolution
-          </Button>
-        : digimon.digimonData.stage === 'adult' ?
-          <Button
-            onClick={ () => perfectEvo() }
-            variant='outline'
-            colorScheme='red.500'
-          >
-            Perfect Evolution
-          </Button>
-        : digimon.digimonData.stage === 'perfect' ?
-          <Button
-            onClick={ () => ultimateEvo() }
-            variant='outline'
-            colorScheme='red.500'
-          >
-            Ultimate Evolution
-          </Button>
-        : null
-      }
     </Flex>
   );
 };

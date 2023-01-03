@@ -95,12 +95,22 @@ export const Egg= ({ digitama }) => {
     <Flex
       direction='column'
     >
-      <Box
-        as={ motion.div }
-        width='33vw'
-        height='33vw'
-        animation={ animation }
-      />
+      <Flex
+        width='100%'
+        border='5px double'
+        borderColor='gray.400'
+        borderRadius='10px'
+        backgroundColor='transparent'
+        justifyContent='center'
+      >
+        <Box
+          as={ motion.div }
+          width='33vw'
+          height='33vw'
+          animation={ animation }
+        />
+      </Flex>
+      
       {
         showButton ? 
         <Button
