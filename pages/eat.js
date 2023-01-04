@@ -1,18 +1,24 @@
 import { useSession } from 'next-auth/react';
 import { unstable_getServerSession } from 'next-auth';
+import { useState } from 'react';
 
 import dbConnect from '../lib/mongooseConnect';
 import { authOptions } from './api/auth/[...nextauth]';
 import DigiPet from '../model/digipet';
 
+import { Eating } from '../components/eat/Eating';
+import { Idle } from '../components/eat/Idle';
+import { Finish } from '../components/eat/Finish';
+
 import {
+  Button,
   Flex,
-  Text,
-  Image,
+  Text
 } from '@chakra-ui/react';
 
 export default function Home({ myPet }) {
   const { data: session } = useSession();
+  const [ eatingState, setEatingState ] = useState( 'idle' ); // idle, eating, complete
 
   if( session ) {
     return (
@@ -20,20 +26,33 @@ export default function Home({ myPet }) {
         direction='column'
       >
         <Text>Eat</Text>
-        <Image
-          src='/eating.gif'
-          alt='eat'
-          border='5px double silver'
-          borderRadius='10px'
-          margin='10px 20px'
-        />
-        <Text
-          textStyle='digital'
-          fontSize='10px'
-          textAlign='center'
+        {
+          eatingState === 'idle' ? <Idle digimon={ myPet } />
+          : eatingState === 'complete' ? <Finish digimon={ myPet } />
+          : eatingState === 'eating' ? <Eating />
+          : null
+        }
+        <Button
+          onClick={ () => setEatingState( 'eating' ) }
+          variant='outline'
+          borderColor='gray.400'
         >
-          Eating in Progress...
-        </Text>
+          Eat
+        </Button>
+        <Button
+          onClick={ () => setEatingState( 'idle' ) }
+          variant='outline'
+          borderColor='gray.400'
+        >
+          Idle
+        </Button>
+        <Button
+          onClick={ () => setEatingState( 'complete' ) }
+          variant='outline'
+          borderColor='gray.400'
+        >
+          Complete
+        </Button>
       </Flex>
     )
   }

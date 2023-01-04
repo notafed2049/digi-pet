@@ -110,7 +110,7 @@ export const MainBtns = ({ digimon }) => {
         </Button>
         <Button
           as={ NextLink }
-          href='/train'
+          href='/fight'
           variant='outline'
           colorScheme='gray.400'
           leftIcon={ <Icon as={ GiPunchBlast } boxSize='30px' /> }

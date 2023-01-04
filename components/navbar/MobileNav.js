@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { signOut } from 'next-auth/react';
-import { useRouter } from 'next/router';
+import NextLink from 'next/link';
 
 import {
   Flex,
@@ -15,8 +15,6 @@ import { CloseIcon, HamburgerIcon } from '@chakra-ui/icons';
 import { MdLogout } from 'react-icons/md';
 
 export const MobileNav = () => {
-  const router = useRouter();
-
   const [ navOpen, setNavOpen ] = useState( false );
 
   const handleOpenNav = () => {
@@ -26,11 +24,6 @@ export const MobileNav = () => {
     else if( !navOpen ) {
       setNavOpen( true );
     }
-  };
-
-  const handleReturnHome = () => {
-    router.push( '/' );
-    setNavOpen( false );
   };
 
   return (
@@ -47,7 +40,8 @@ export const MobileNav = () => {
         padding='5px 10px'
       >
         <Button
-          onClick={ () => handleReturnHome() }
+          as={ NextLink }
+          href='/'
           variant='ghost'
           color='gray.400'
         >
