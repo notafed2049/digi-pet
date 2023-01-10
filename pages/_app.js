@@ -22,7 +22,7 @@ const theme = extendTheme({
         color: 'gray.400'
       }
     }
-  }
+  },
 });
 
 function MyApp({ Component,

@@ -1,9 +1,8 @@
 export const ultimate = [
   {
     species: 'Wargreymon',
-    sprite: '/sprite/wargrey/',
-    artwork: '/artwork/blitzgrey.png',//TODO change this
-    stage: 'ultimate',
+    sprite: '/digimon/wargrey/',
+    stage: 'Ultimate',
     borderTheme: 'yellow.900',
     bgTheme: 'yellow.500',
     //stats
@@ -13,42 +12,27 @@ export const ultimate = [
     weight: 30
   },
   {
-    species: 'Mugendramon',
-    sprite: '/sprite/mugendra/',
-    artwork: '/artwork/mugendra.png',
-    stage: 'ultimate',
-    borderTheme: 'black',
-    bgTheme: 'gray.500',
-    //stats
-    DP: 55,
-    HP: 18,
-    AP: 8,
-    weight: 40
-  },
-  {
-    species: 'Gaiomon',
-    sprite: '/sprite/gaio/',
-    artwork: '/artwork/donedevi.png',
-    stage: 'ultimate',
+    species: 'Blitzgreymon',
+    sprite: '/digimon/blitzgrey/',
+    stage: 'Ultimate',
     borderTheme: 'red.900',
     bgTheme: 'red.500',
     //stats
-    DP: 60,
-    HP: 10,
-    AP: 9,
+    DP: 50,
+    HP: 12,
+    AP: 6,
     weight: 58
   },
   {
-    species: 'Ulforceveedramon',
-    sprite: '/sprite/ulforceveedra/',
-    artwork: '/artwork/devi.png',
-    stage: 'adult',
-    borderTheme: 'blue.900',
-    bgTheme: 'blue.500',
+    species: 'Donedevimon',
+    sprite: '/digimon/donedevi/',
+    stage: 'Ultimate',
+    borderTheme: 'purple.900',
+    bgTheme: 'purple.500',
     //stats
-    DP: 50,
-    HP: 14,
-    AP: 7,
+    DP: 55,
+    HP: 16,
+    AP: 6,
     weight: 30
   },
 ]

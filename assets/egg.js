@@ -1,8 +1,8 @@
 export const egg = [
   {
-    type: 'redStripes',
-    sprite: '/sprite/dino_egg/',
-    stage: 'digitama',
+    type: 'aguEgg',
+    sprite: '/digimon/agu_egg/',
+    stage: 'Digitama',
     nextStage: 'Botamon'
   }
 ]

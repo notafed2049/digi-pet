@@ -1,10 +1,9 @@
 export const child = [
   {
     species: 'Agumon',
-    sprite: 'sprite/agu/',
-    artwork: '/artwork/agu.png',
-    stage: 'child',
-    nextStage: [ 'Greymon', 'Tyranomon', 'Devidramon' ],
+    sprite: '/digimon/agu/',
+    stage: 'Child',
+    nextStage: [ 'Greymon', 'Algomon (Adult)', 'Ogremon', 'Coelamon' ],
     borderTheme: 'yellow.900',
     bgTheme: 'yellow.500',
     //stats
