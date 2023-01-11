@@ -6,8 +6,8 @@ import dbConnect from '../lib/mongooseConnect';
 import { authOptions } from './api/auth/[...nextauth]';
 import DigiPet from '../model/digipet';
 
-import { MainScreen } from '../components/MainScreen';
-import { MainBtns } from '../components/homeBtns/MainBtns';
+import { MainScreen } from '../components/screen/Main';
+// import { MainBtns } from '../components/homeBtns/MainBtns';
 
 import {
   Flex,
@@ -25,12 +25,8 @@ export default function Home({ myPet }) {
         direction='column'
       >
         <Text>Pet</Text>
-        {
-          myPet ? <MainScreen pet={ myPet } />
-          : null
-        }
 
-        <MainBtns digimon={ myPet } />
+        <MainScreen digimon={ myPet } />
 
       </Flex>
     )
