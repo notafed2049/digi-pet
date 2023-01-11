@@ -115,7 +115,7 @@ export const EvoBtns = ({ digimon }) => {
   };
 
   return(
-    digimon.digimonData.stage === 'baby1' ?
+    digimon.digimonData.stage === 'Baby I' ?
       <Button
         onClick={ () => babyEvo() }
         variant='outline'
@@ -123,7 +123,7 @@ export const EvoBtns = ({ digimon }) => {
       >
         Baby 2 Evolution
       </Button>
-    : digimon.digimonData.stage === 'baby2' ?
+    : digimon.digimonData.stage === 'Baby II' ?
         <Button
           onClick={ () => childEvo() }
           variant='outline'
@@ -131,7 +131,7 @@ export const EvoBtns = ({ digimon }) => {
         >
           Child Evolution
         </Button>
-    : digimon.digimonData.stage === 'child' ?
+    : digimon.digimonData.stage === 'Child' ?
         <Button
           onClick={ () => adultEvo() }
           variant='outline'
@@ -139,7 +139,7 @@ export const EvoBtns = ({ digimon }) => {
         >
           Adult Evolution
         </Button>
-    : digimon.digimonData.stage === 'adult' ?
+    : digimon.digimonData.stage === 'Adult' ?
         <Button
           onClick={ () => perfectEvo() }
           variant='outline'
@@ -147,7 +147,7 @@ export const EvoBtns = ({ digimon }) => {
         >
           Perfect Evolution
         </Button>
-    : digimon.digimonData.stage === 'perfect' ?
+    : digimon.digimonData.stage === 'Perfect' ?
         <Button
           onClick={ () => ultimateEvo() }
           variant='outline'

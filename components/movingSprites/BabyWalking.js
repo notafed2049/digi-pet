@@ -9,7 +9,7 @@ import {
 import { motion } from 'framer-motion';
 
 //TODO complete this styling
-export const BabyWalking = ({ babyData }) => {
+export const BabyWalking = ({ petData }) => {
   const movingKeyframe = keyframes`
     0% {
       transform: scaleX(-1);
@@ -64,15 +64,15 @@ export const BabyWalking = ({ babyData }) => {
       <Flex
         width='100%'
         border='5px double'
-        borderColor={ babyData.borderTheme }
+        borderColor={ petData.digimonData.borderTheme }
         borderRadius='10px'
-        backgroundColor={ babyData.bgTheme }
+        backgroundColor={ petData.digimonData.bgTheme }
       >
         <Image
           as={ motion.img }
           animation={ animation }
-          src={ `${ babyData.sprite }idle.gif` }
-          alt={ babyData.species }
+          src={ `${ petData.digimonData.sprite }idle.gif` }
+          alt={ petData.digimonData.species }
           width='33vw'
           height='33vw'
           padding='20px'

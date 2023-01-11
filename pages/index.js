@@ -1,32 +1,50 @@
 import { useSession } from 'next-auth/react';
 import { unstable_getServerSession } from 'next-auth';
-import { useRouter } from 'next/router';
+import { useState } from 'react';
 
 import dbConnect from '../lib/mongooseConnect';
 import { authOptions } from './api/auth/[...nextauth]';
 import DigiPet from '../model/digipet';
 
 import { MainScreen } from '../components/screen/Main';
-// import { MainBtns } from '../components/homeBtns/MainBtns';
+import { StatScreen } from '../components/screen/Stats';
+
+import { MainBtns } from '../components/navBtns/MainBtns';
+import { CreateDeleteBtn } from '../components/navBtns/CreateDelete';
 
 import {
   Flex,
+  Button,
   Text
 } from "@chakra-ui/react"
 
 export default function Home({ myPet }) {
   const { data: session } = useSession();
-  const router = useRouter();
+
+//This state controls what content to show the users
+//example: 'main' shows main screen, 'train' shows training screen, 'stat' shows status screen
+  const [ pageState, setPageState ] = useState( 'main' );
 
   if( session ) {
 
     return (
       <Flex
         direction='column'
+        marginTop='10px'
       >
-        <Text>Pet</Text>
 
-        <MainScreen digimon={ myPet } />
+        {
+          pageState === 'main' ? <MainScreen digimon={ myPet } />
+          : pageState === 'stat' ? <StatScreen digimon={ myPet } />
+          : null
+        }
+
+        {
+          myPet ? <MainBtns changeScreen={ setPageState } />
+          : null
+        }
+
+        <CreateDeleteBtn digimon={ myPet } />
 
       </Flex>
     )

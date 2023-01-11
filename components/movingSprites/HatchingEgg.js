@@ -12,40 +12,40 @@ import {
 import { motion } from 'framer-motion';
 
 //TODO complete this styling
-export const HatchingEgg = ({ eggData }) => {
+export const HatchingEgg = ({ petData }) => {
   const router = useRouter();
 
   const [ showButton, setShowButton ] = useState( false );
 
   const hatchingKeyframe = keyframes`
     0%, 20% {
-      background: url( ${ eggData.sprite }001.png ) no-repeat center/60%;
+      background: url( ${ petData.digimonData.sprite }001.png ) no-repeat center/60%;
     }
     10%, 30% {
-      background: url( ${ eggData.sprite }002.png ) no-repeat center/60%;
+      background: url( ${ petData.digimonData.sprite }002.png ) no-repeat center/60%;
     }
     40%, 60% {
-      background: url( ${ eggData.sprite }003.png ) no-repeat center/60%;
+      background: url( ${ petData.digimonData.sprite }003.png ) no-repeat center/60%;
 
     }
     50% {
-      background: url( ${ eggData.sprite }004.png ) no-repeat center/60%;
+      background: url( ${ petData.digimonData.sprite }004.png ) no-repeat center/60%;
 
     }
     70% {
-      background: url( ${ eggData.sprite }005.png ) no-repeat center/60%;
+      background: url( ${ petData.digimonData.sprite }005.png ) no-repeat center/60%;
 
     }
     80% {
-      background: url( ${ eggData.sprite }006.png ) no-repeat center/60%;
+      background: url( ${ petData.digimonData.sprite }006.png ) no-repeat center/60%;
 
     }
     90% {
-      background: url( ${ eggData.sprite }007.png ) no-repeat center/60%;
+      background: url( ${ petData.digimonData.sprite }007.png ) no-repeat center/60%;
 
     }
     100% {
-      background: url( ${ eggData.sprite }008.png ) no-repeat center/60%;
+      background: url( ${ petData.digimonData.sprite }008.png ) no-repeat center/60%;
     }
   `;
 
@@ -58,7 +58,7 @@ export const HatchingEgg = ({ eggData }) => {
         url: '/api/digipet/babyEvo',
         withCredentials: true,
         data: {
-          digimonId: digitama._id,
+          digimonId: petData._id,
         },
       });
   

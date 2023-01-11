@@ -10,7 +10,7 @@ import {
 import { motion } from 'framer-motion';
 
 //TODO complete this styling
-export const Walking = ({ digimonData }) => {
+export const Walking = ({ petData }) => {
   const movingKeyframe = keyframes`
     0% {
       transform: scaleX(-1);
@@ -65,15 +65,15 @@ export const Walking = ({ digimonData }) => {
       <Flex
         width='100%'
         border='5px double'
-        borderColor={ digimonData.borderTheme }
+        borderColor={ petData.digimonData.borderTheme }
         borderRadius='10px'
-        backgroundColor={ digimonData.bgTheme }
+        backgroundColor={ petData.digimonData.bgTheme }
       >
         <Image
           as={ motion.img }
           animation={ animation }
-          src={ `${ digimonData.sprite }walking.gif` }
-          alt={ digimonData.species }
+          src={ `${ petData.digimonData.sprite }walking.gif` }
+          alt={ petData.digimonData.species }
           width='33vw'
           height='33vw'
           padding='10px'
