@@ -2,7 +2,6 @@ import React from 'react';
 import { DateTime } from 'luxon';
 
 import { HatchingEgg } from '../movingSprites/HatchingEgg';
-import { BabyWalking } from '../movingSprites/BabyWalking';
 import { Walking } from '../movingSprites/Walking';
 
 import {
@@ -26,10 +25,7 @@ export const StatScreen = ({ digimon }) => {
         direction='column'
       >
         {
-          !digimon ? null
-          : digimon.digimonData.stage === 'Digitama' ? <HatchingEgg petData={ digimon } />
-          : digimon.digimonData.stage === 'Baby I' ? <BabyWalking petData={ digimon } />
-          : digimon.digimonData.stage === 'Baby II' ? <BabyWalking petData={ digimon } />
+          digimon.digimonData.stage === 'Digitama' ? <HatchingEgg petData={ digimon } />
           : <Walking petData={ digimon } />
         }
         <Flex

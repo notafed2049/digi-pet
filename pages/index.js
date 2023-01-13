@@ -21,6 +21,7 @@ import {
 export default function Home({ myPet }) {
   const { data: session } = useSession();
 
+
 //This state controls what content to show the users
 //example: 'main' shows main screen, 'train' shows training screen, 'stat' shows status screen
   const [ pageState, setPageState ] = useState( 'main' );

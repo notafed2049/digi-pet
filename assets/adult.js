@@ -1,54 +1,72 @@
 export const adult = [
   {
     species: 'Greymon',
-    sprite: '/digimon/grey/',
+    sprite: '/digimon/grey',
     stage: 'Adult',
-    nextStage: [ 'Metalgreymon', 'Anomalocarimon', 'Metaltyranomon' ],
+    nextStage: [ 'Metalgreymon (Virus)' ],
     borderTheme: 'orange.900',
     bgTheme: 'orange.500',
-    //stats
-    DP: 25,
-    HP: 5,
-    AP: 3,
-    weight: 30
+    weight: 30,
+    power: 75
   },
   {
-    species: 'Coelamon',
-    sprite: '/digimon/coela/',
+    species: 'Devimon',
+    sprite: '/digimon/devi',
     stage: 'Adult',
-    nextStage: [ 'Andromon', 'Anomalocarimon', 'Neodevimon' ],
-    borderTheme: 'black',
-    bgTheme: 'gray.500',
-    //stats
-    DP: 20,
-    HP: 4,
-    AP: 3,
-    weight: 20
-  },
-  {
-    species: 'Ogremon',
-    sprite: '/digimon/ogre/',
-    stage: 'Adult',
-    nextStage: [ 'Andromon', 'Mamemon', 'Neodevimon' ],
-    borderTheme: 'green.900',
-    bgTheme: 'green.500',
-    //stats
-    DP: 20,
-    HP: 5,
-    AP: 2,
-    weight: 20
-  },
-  {
-    species: 'Algomon (Adult)',
-    sprite: '/digimon/algo_adult/',
-    stage: 'Adult',
-    nextStage: [ 'Metalgreymon', 'Mamemon', 'Metaltyranomon' ],
+    nextStage: [ 'Metalgreymon (Virus)' ],
     borderTheme: 'purple.900',
     bgTheme: 'purple.500',
-    //stats
-    DP: 15,
-    HP: 4,
-    AP: 2,
-    weight: 25
+    weight: 15,
+    power: 65
+  },
+  {
+    species: 'Airdramon',
+    sprite: '/digimon/airdra',
+    stage: 'Adult',
+    nextStage: [ 'Metalgreymon (Virus)' ],
+    borderTheme: 'blue.900',
+    bgTheme: 'blue.500',
+    weight: 20,
+    power: 55
+  },
+  {
+    species: 'Numemon',
+    sprite: '/digimon/nume',
+    stage: 'Adult',
+    nextStage: [ 'Monzaemon' ],
+    borderTheme: 'green.900',
+    bgTheme: 'green.500',
+    weight: 10,
+    power: 40
+  },
+  {
+    species: 'Tyranomon',
+    sprite: '/digimon/tyrano',
+    stage: 'Adult',
+    nextStage: [ 'Mamemon' ],
+    borderTheme: 'red.900',
+    bgTheme: 'red.500',
+    weight: 20,
+    power: 70
+  },
+  {
+    species: 'Meramon',
+    sprite: '/digimon/mera',
+    stage: 'Adult',
+    nextStage: [ 'Mamemon' ],
+    borderTheme: 'orange.900',
+    bgTheme: 'orange.500',
+    weight: 18,
+    power: 60
+  },
+  {
+    species: 'Seadramon',
+    sprite: '/digimon/seadra',
+    stage: 'Adult',
+    nextStage: [ 'Mamemon' ],
+    borderTheme: 'blue.900',
+    bgTheme: 'blue.500',
+    weight: 20,
+    power: 50
   },
 ]

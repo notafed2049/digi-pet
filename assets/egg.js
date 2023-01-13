@@ -1,8 +1,8 @@
 export const egg = [
   {
     type: 'aguEgg',
-    sprite: '/digimon/agu_egg/',
+    sprite: '/digimon/agu_egg',
     stage: 'Digitama',
-    nextStage: 'Botamon'
+    nextStage: [ 'Botamon' ]
   }
 ]

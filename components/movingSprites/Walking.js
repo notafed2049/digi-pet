@@ -55,7 +55,7 @@ export const Walking = ({ petData }) => {
     }
   `;
 
-  const animation = `${ movingKeyframe } 35s steps(1, start) infinite`;
+  const animation = `${ movingKeyframe } 20s steps(1, start) infinite`;
 
   return (
     <Flex
@@ -72,11 +72,11 @@ export const Walking = ({ petData }) => {
         <Image
           as={ motion.img }
           animation={ animation }
-          src={ `${ petData.digimonData.sprite }walking.gif` }
+          src={ `${ petData.digimonData.sprite }/idle.gif` }
           alt={ petData.digimonData.species }
           width='33vw'
           height='33vw'
-          padding='10px'
+          // padding='10px'
         />
       </Flex>
     </Flex>

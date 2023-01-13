@@ -18,38 +18,38 @@ export const HatchingEgg = ({ petData }) => {
   const [ showButton, setShowButton ] = useState( false );
 
   const hatchingKeyframe = keyframes`
-    0%, 20% {
-      background: url( ${ petData.digimonData.sprite }001.png ) no-repeat center/60%;
+    0% {
+      background: url( ${ petData.digimonData.sprite }/001.png ) no-repeat center/60%;
     }
-    10%, 30% {
-      background: url( ${ petData.digimonData.sprite }002.png ) no-repeat center/60%;
+    16.6% {
+      background: url( ${ petData.digimonData.sprite }/002.png ) no-repeat center/60%;
     }
-    40%, 60% {
-      background: url( ${ petData.digimonData.sprite }003.png ) no-repeat center/60%;
+    33.2% {
+      background: url( ${ petData.digimonData.sprite }/003.png ) no-repeat center/60%;
 
     }
-    50% {
-      background: url( ${ petData.digimonData.sprite }004.png ) no-repeat center/60%;
+    49.8% {
+      background: url( ${ petData.digimonData.sprite }/004.png ) no-repeat center/60%;
 
     }
-    70% {
-      background: url( ${ petData.digimonData.sprite }005.png ) no-repeat center/60%;
+    66.4% {
+      background: url( ${ petData.digimonData.sprite }/005.png ) no-repeat center/60%;
 
     }
-    80% {
-      background: url( ${ petData.digimonData.sprite }006.png ) no-repeat center/60%;
+    83% {
+      background: url( ${ petData.digimonData.sprite }/006.png ) no-repeat center/60%;
 
     }
-    90% {
-      background: url( ${ petData.digimonData.sprite }007.png ) no-repeat center/60%;
+    99.6% {
+      background: url( ${ petData.digimonData.sprite }/007.png ) no-repeat center/60%;
 
     }
     100% {
-      background: url( ${ petData.digimonData.sprite }008.png ) no-repeat center/60%;
+      background: url( ${ petData.digimonData.sprite }/008.png ) no-repeat center/60%;
     }
   `;
 
-  const animation = `${ hatchingKeyframe } 20s steps(1, start) 1 forwards`;
+  const animation = `${ hatchingKeyframe } 10s steps(1, start) 1 forwards`;
 
   const babyEvo = async () => {
     try {
@@ -76,7 +76,7 @@ export const HatchingEgg = ({ petData }) => {
   useEffect(() => {
     const timer = setTimeout( () => {
       setShowButton( true );
-    }, 20000 );
+    }, 10000 );
 
     return () => clearTimeout( timer );
   }, [])

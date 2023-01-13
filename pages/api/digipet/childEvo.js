@@ -9,7 +9,8 @@ export default async function handler( req, res ) {
       await dbConnect();
 
       const digipet = await DigiPet.findById( req.body.digimonId );
-      const evo = child.find(( digimon ) => digimon.species === digipet.digimonData.nextStage );
+      const randomNum = Math.floor( Math.random() * digipet.digimonData.nextStage.length );
+      const evo = child.find(( digimon ) => digimon.species === digipet.digimonData.nextStage[ randomNum ] );
       digipet.digimonData = evo;
       digipet.evoLine.push( evo.species );
 

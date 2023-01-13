@@ -1,80 +1,32 @@
 export const perfect = [
   {
-    species: 'Metalgreymon',
-    sprite: '/digimon/metalgrey/',
+    species: 'Metalgreymon (Virus)',
+    sprite: '/digimon/metalgrey_virus',
     stage: 'Perfect',
-    nextStage: [ 'Wargreymon', 'Blitzgreymon' ],
-    borderTheme: 'orange.900',
-    bgTheme: 'orange.500',
-    //stats
-    DP: 35,
-    HP: 12,
-    AP: 4,
-    weight: 40
-  },
-  {
-    species: 'Andromon',
-    sprite: '/digimon/andro/',
-    stage: 'Perfect',
-    nextStage: [ 'Donedevi', 'Wargreymon' ],
+    nextStage: [ 'Blitzgreymon' ],
     borderTheme: 'black',
     bgTheme: 'gray.500',
-    //stats
-    DP: 30,
-    HP: 10,
-    AP: 3,
-    weight: 25
+    weight: 40,
+    power: 126
   },
   {
-    species: 'Anomalocarimon',
-    sprite: '/digimon/anomalocari/',
+    species: 'Monzaemon',
+    sprite: '/digimon/monzae',
     stage: 'Perfect',
-    nextStage: [ 'Wargreymon', 'Blitzgreymon' ],
-    borderTheme: 'black',
-    bgTheme: 'gray.500',
-    //stats
-    DP: 35,
-    HP: 10,
-    AP: 3,
-    weight: 20
+    nextStage: [],
+    borderTheme: 'yellow.900',
+    bgTheme: 'yellow.500',
+    weight: 40,
+    power: 107
   },
   {
     species: 'Mamemon',
-    sprite: '/digimon/mame/',
+    sprite: '/digimon/mame',
     stage: 'Perfect',
-    nextStage: [ 'Donedevimon', 'Blitzgreymon' ],
-    borderTheme: 'black',
-    bgTheme: 'gray.500',
-    //stats
-    DP: 30,
-    HP: 8,
-    AP: 5,
-    weight: 5
-  },
-  {
-    species: 'Neodevimon',
-    sprite: '/digimon/neodevi/',
-    stage: 'Perfect',
-    nextStage: [ 'Donedevimon', 'Blitzgreymon' ],
-    borderTheme: 'purple.900',
-    bgTheme: 'purple.500',
-    //stats
-    DP: 35,
-    HP: 10,
-    AP: 3,
-    weight: 25
-  },
-  {
-    species: 'Metaltyranomon',
-    sprite: '/digimon/metaltyrano/',
-    stage: 'Perfect',
-    nextStage: [ 'Wargreymon', 'Blitzgreymon' ],
-    borderTheme: 'black',
-    bgTheme: 'gray.500',
-    //stats
-    DP: 25,
-    HP: 10,
-    AP: 4,
-    weight: 40
+    nextStage: [ 'Banchomamemon' ],
+    borderTheme: 'red.900',
+    bgTheme: 'red.500',
+    weight: 5,
+    power: 118
   },
 ]
