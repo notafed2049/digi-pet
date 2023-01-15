@@ -1,7 +1,6 @@
 import React from 'react';
 import { DateTime } from 'luxon';
 
-import { HatchingEgg } from '../movingSprites/HatchingEgg';
 import { Walking } from '../movingSprites/Walking';
 
 import {
@@ -24,10 +23,7 @@ export const StatScreen = ({ digimon }) => {
       <Flex
         direction='column'
       >
-        {
-          digimon.digimonData.stage === 'Digitama' ? <HatchingEgg petData={ digimon } />
-          : <Walking petData={ digimon } />
-        }
+        <Walking petData={ digimon } />
         <Flex
           padding='10px'
           direction='column'
@@ -46,21 +42,7 @@ export const StatScreen = ({ digimon }) => {
               fontSize='10px'
               color={ digimon.digimonData.borderTheme }
             >
-              { `HP: ${ digimon.digimonData.HP ? digimon.digimonData.HP : 0 }` }
-            </Text>
-            <Text
-              textStyle='digital'
-              fontSize='10px'
-              color={ digimon.digimonData.borderTheme }
-            >
-              { `AP: ${ digimon.digimonData.AP ? digimon.digimonData.AP : 0 }` }
-            </Text>
-            <Text
-              textStyle='digital'
-              fontSize='10px'
-              color={ digimon.digimonData.borderTheme }
-            >
-              { `DP: ${ digimon.digimonData.DP ? digimon.digimonData.DP : 0 }` }
+              { `Power: ${ digimon.digimonData.power }` }
             </Text>
             <Text
               textStyle='digital'
@@ -87,7 +69,6 @@ export const StatScreen = ({ digimon }) => {
           <Grid
             gap='5px'
             marginTop='5px'
-            alignSelf='center'
           >
             <Text
               textStyle='digital'

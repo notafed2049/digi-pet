@@ -8,6 +8,7 @@ import DigiPet from '../model/digipet';
 
 import { MainScreen } from '../components/screen/Main';
 import { StatScreen } from '../components/screen/Stats';
+import { EatScreen } from '../components/screen/Eat';
 
 import { MainBtns } from '../components/navBtns/MainBtns';
 import { CreateDeleteBtn } from '../components/navBtns/CreateDelete';
@@ -37,15 +38,19 @@ export default function Home({ myPet }) {
         {
           pageState === 'main' ? <MainScreen digimon={ myPet } />
           : pageState === 'stat' ? <StatScreen digimon={ myPet } />
+          : pageState === 'eat' ? <EatScreen digimon={ myPet } />
+          : <MainScreen digimon={ myPet } />
+        }
+
+        {
+          myPet ? <MainBtns changeScreen={ setPageState } digimon={ myPet } />
           : null
         }
 
         {
-          myPet ? <MainBtns changeScreen={ setPageState } />
+          pageState === 'main' ? <CreateDeleteBtn digimon={ myPet } />
           : null
         }
-
-        <CreateDeleteBtn digimon={ myPet } />
 
       </Flex>
     )

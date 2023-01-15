@@ -1,5 +1,6 @@
 export const ultimate = [
   {
+    id: 'blitzgrey',
     species: 'Blitzgreymon',
     sprite: '/digimon/blitzgrey',
     stage: 'Ultimate',
@@ -9,6 +10,7 @@ export const ultimate = [
     power: 188
   },
   {
+    id: 'banchomame',
     species: 'Banchomamemon',
     sprite: '/digimon/banchomame',
     stage: 'Ultimate',

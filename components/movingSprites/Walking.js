@@ -2,7 +2,6 @@ import React from 'react';
 
 import {
   Image,
-  Box,
   Flex,
   keyframes
 } from '@chakra-ui/react';
@@ -76,7 +75,6 @@ export const Walking = ({ petData }) => {
           alt={ petData.digimonData.species }
           width='33vw'
           height='33vw'
-          // padding='10px'
         />
       </Flex>
     </Flex>
