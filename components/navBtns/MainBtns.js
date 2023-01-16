@@ -1,4 +1,6 @@
-import React from 'react';
+import React, { useContext } from 'react';
+
+import { DigimonContext } from '../../pages';
 
 import {
   Flex,
@@ -15,9 +17,10 @@ import {
   GiPunchBlast
 } from 'react-icons/gi';
 
-export const MainBtns = ({ changeScreen, digimon }) => {
+export const MainBtns = () => {
+  const { myPet, setPageState } = useContext( DigimonContext )
 
-  if( digimon.digimonData.stage !== 'Digitama' ) {
+  if( myPet.digimonData.stage !== 'Digitama' ) {
     return(
       <Flex
         direction='column'
@@ -30,7 +33,7 @@ export const MainBtns = ({ changeScreen, digimon }) => {
           marginBottom='10px'
         >
           <Button
-            onClick={ () => changeScreen( 'main' ) }
+            onClick={ () => setPageState( 'main' ) }
             variant='outline'
             colorScheme='gray.400'
             leftIcon={ <Icon as={ FaHome } boxSize='30px' /> }
@@ -38,7 +41,7 @@ export const MainBtns = ({ changeScreen, digimon }) => {
             Home
           </Button>
           <Button
-            onClick={ () => changeScreen( 'stat' ) }
+            onClick={ () => setPageState( 'stat' ) }
             variant='outline'
             colorScheme='gray.400'
             leftIcon={ <Icon as={ GiWeightScale } boxSize='30px' /> }
@@ -46,7 +49,7 @@ export const MainBtns = ({ changeScreen, digimon }) => {
             Stats
           </Button>
           <Button
-            onClick={ () => changeScreen( 'train' ) }
+            onClick={ () => setPageState( 'train' ) }
             variant='outline'
             colorScheme='gray.400'
             leftIcon={ <Icon as={ GiPunchingBag } boxSize='30px' /> }
@@ -54,7 +57,7 @@ export const MainBtns = ({ changeScreen, digimon }) => {
             Train
           </Button>
           <Button
-            onClick={ () => changeScreen( 'eat' ) }
+            onClick={ () => setPageState( 'eat' ) }
             variant='outline'
             colorScheme='gray.400'
             leftIcon={ <Icon as={ GiMeat } boxSize='30px' /> }
@@ -62,9 +65,9 @@ export const MainBtns = ({ changeScreen, digimon }) => {
             Eat
           </Button>
           {
-            digimon.digimonData.stage === 'Baby I' || digimon.digimonData.stage === 'Baby II' ? null
+            myPet.digimonData.stage === 'Baby I' || myPet.digimonData.stage === 'Baby II' ? null
             : <Button
-            onClick={ () => changeScreen( 'fight' ) }
+            onClick={ () => setPageState( 'fight' ) }
             variant='outline'
             colorScheme='gray.400'
             leftIcon={ <Icon as={ GiPunchBlast } boxSize='30px' /> }
@@ -73,7 +76,7 @@ export const MainBtns = ({ changeScreen, digimon }) => {
           </Button>
           }
           <Button
-            onClick={ () => changeScreen( 'poop' ) }
+            onClick={ () => setPageState( 'poop' ) }
             variant='outline'
             colorScheme='gray.400'
             leftIcon={ <Icon as={ FaPoop } boxSize='30px' /> }

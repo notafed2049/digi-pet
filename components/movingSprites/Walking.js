@@ -1,4 +1,6 @@
-import React from 'react';
+import React, { useContext } from 'react';
+
+import { DigimonContext } from '../../pages';
 
 import {
   Image,
@@ -9,7 +11,8 @@ import {
 import { motion } from 'framer-motion';
 
 //TODO complete this styling
-export const Walking = ({ petData }) => {
+export const Walking = () => {
+  const { myPet } = useContext( DigimonContext );
   const movingKeyframe = keyframes`
     0% {
       transform: scaleX(-1);
@@ -64,15 +67,15 @@ export const Walking = ({ petData }) => {
       <Flex
         width='100%'
         border='5px double'
-        borderColor={ petData.digimonData.borderTheme }
+        borderColor={ myPet.digimonData.borderTheme }
         borderRadius='10px'
-        backgroundColor={ petData.digimonData.bgTheme }
+        backgroundColor={ myPet.digimonData.bgTheme }
       >
         <Image
           as={ motion.img }
           animation={ animation }
-          src={ `${ petData.digimonData.sprite }/idle.gif` }
-          alt={ petData.digimonData.species }
+          src={ `${ myPet.digimonData.sprite }/idle.gif` }
+          alt={ myPet.digimonData.species }
           width='33vw'
           height='33vw'
         />

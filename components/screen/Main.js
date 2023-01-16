@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useContext } from 'react';
 
+import { DigimonContext } from '../../pages';
 import { HatchingEgg } from '../movingSprites/HatchingEgg';
 import { Walking } from '../movingSprites/Walking';
 
@@ -7,17 +8,18 @@ import {
   Flex
 } from '@chakra-ui/react';
 
-export const MainScreen = ({ digimon }) => {
+export const MainScreen = () => {
+  const { myPet } = useContext( DigimonContext );
 
-  if( digimon ) {
+  if( myPet ) {
     return (
       <Flex
         direction='column'
         width='100%'
       >
         {
-          digimon.digimonData.stage === 'Digitama' ? <HatchingEgg petData={ digimon } />
-          : <Walking petData={ digimon } />
+          myPet.digimonData.stage === 'Digitama' ? <HatchingEgg />
+          : <Walking />
         }
       </Flex>
     );

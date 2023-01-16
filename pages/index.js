@@ -1,3 +1,4 @@
+import { createContext } from 'react';
 import { useSession } from 'next-auth/react';
 import { unstable_getServerSession } from 'next-auth';
 import { useState } from 'react';
@@ -15,9 +16,10 @@ import { CreateDeleteBtn } from '../components/navBtns/CreateDelete';
 
 import {
   Flex,
-  Button,
-  Text
+  Button
 } from "@chakra-ui/react"
+
+export const DigimonContext = createContext( null );
 
 export default function Home({ myPet }) {
   const { data: session } = useSession();
@@ -34,23 +36,38 @@ export default function Home({ myPet }) {
         direction='column'
         marginTop='10px'
       >
+        <DigimonContext.Provider value={{ myPet, setPageState }}>
 
-        {
-          pageState === 'main' ? <MainScreen digimon={ myPet } />
-          : pageState === 'stat' ? <StatScreen digimon={ myPet } />
-          : pageState === 'eat' ? <EatScreen digimon={ myPet } />
-          : <MainScreen digimon={ myPet } />
-        }
+          {
+            pageState === 'main' ? <MainScreen />
+            : pageState === 'stat' ? <StatScreen />
+            : pageState === 'eat' ? <EatScreen />
+            : <MainScreen />
+          }
 
-        {
-          myPet ? <MainBtns changeScreen={ setPageState } digimon={ myPet } />
-          : null
-        }
+          {
+            myPet ? <MainBtns />
+            : null
+          }
 
-        {
-          pageState === 'main' ? <CreateDeleteBtn digimon={ myPet } />
-          : null
-        }
+          {
+            pageState === 'main' ? <CreateDeleteBtn />
+            : null
+          }
+
+          {
+            myPet ? 
+              <Button
+                onClick={ () => console.log({ myPet }) }
+                variant='outline'
+                colorScheme='gray.400'
+              >
+                Click Me
+              </Button>
+            : null
+          }
+
+        </DigimonContext.Provider>
 
       </Flex>
     )

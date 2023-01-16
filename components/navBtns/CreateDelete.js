@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import axios from 'axios';
 import { useSession } from 'next-auth/react';
 import { useRouter } from 'next/router';
 
+import { DigimonContext } from '../../pages';
 import { egg } from '../../assets/egg';
 
 import { EvoBtns } from './EvoBtns';
@@ -12,7 +13,8 @@ import {
   Flex
 } from '@chakra-ui/react';
 
-export const CreateDeleteBtn = ({ digimon }) => {
+export const CreateDeleteBtn = () => {
+  const { myPet } = useContext( DigimonContext )
   const { data: session } = useSession();
   const router = useRouter();
 
@@ -46,7 +48,7 @@ export const CreateDeleteBtn = ({ digimon }) => {
         url: '/api/digipet/delete',
         withCredentials: true,
         data: {
-          digimonId: digimon._id
+          digimonId: myPet._id
         },
       });
   
@@ -60,13 +62,13 @@ export const CreateDeleteBtn = ({ digimon }) => {
     }
   };
 
-  if( digimon ) {
+  if( myPet ) {
     return(
       <Flex
         direction='column'
         width='100%'
       >
-        <EvoBtns digimon={ digimon } />
+        <EvoBtns />
         <Button
           onClick={ () => deletePet() }
           variant='outline'

@@ -1,12 +1,15 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import axios from 'axios';
 import { useRouter } from 'next/router';
+
+import { DigimonContext } from '../../pages';
 
 import {
   Button,
 } from '@chakra-ui/react';
 
-export const EvoBtns = ({ digimon }) => {
+export const EvoBtns = () => {
+  const { myPet } = useContext( DigimonContext )
   const router = useRouter();
 
   const babyEvo = async () => {
@@ -16,7 +19,7 @@ export const EvoBtns = ({ digimon }) => {
         url: '/api/digipet/babyEvo',
         withCredentials: true,
         data: {
-          digimonId: digimon._id,
+          digimonId: myPet._id,
         },
       });
   
@@ -37,7 +40,7 @@ export const EvoBtns = ({ digimon }) => {
         url: '/api/digipet/childEvo',
         withCredentials: true,
         data: {
-          digimonId: digimon._id,
+          digimonId: myPet._id,
         },
       });
   
@@ -58,7 +61,7 @@ export const EvoBtns = ({ digimon }) => {
         url: '/api/digipet/adultEvo',
         withCredentials: true,
         data: {
-          digimonId: digimon._id
+          digimonId: myPet._id
         },
       });
   
@@ -79,7 +82,7 @@ export const EvoBtns = ({ digimon }) => {
         url: '/api/digipet/perfectEvo',
         withCredentials: true,
         data: {
-          digimonId: digimon._id
+          digimonId: myPet._id
         },
       });
   
@@ -100,7 +103,7 @@ export const EvoBtns = ({ digimon }) => {
         url: '/api/digipet/ultimateEvo',
         withCredentials: true,
         data: {
-          digimonId: digimon._id
+          digimonId: myPet._id
         },
       });
   
@@ -115,7 +118,7 @@ export const EvoBtns = ({ digimon }) => {
   };
 
   return(
-    digimon.digimonData.stage === 'Baby I' ?
+    myPet.digimonData.stage === 'Baby I' ?
       <Button
         onClick={ () => babyEvo() }
         variant='outline'
@@ -123,7 +126,7 @@ export const EvoBtns = ({ digimon }) => {
       >
         Baby 2 Evolution
       </Button>
-    : digimon.digimonData.stage === 'Baby II' ?
+    : myPet.digimonData.stage === 'Baby II' ?
         <Button
           onClick={ () => childEvo() }
           variant='outline'
@@ -131,7 +134,7 @@ export const EvoBtns = ({ digimon }) => {
         >
           Child Evolution
         </Button>
-    : digimon.digimonData.stage === 'Child' ?
+    : myPet.digimonData.stage === 'Child' ?
         <Button
           onClick={ () => adultEvo() }
           variant='outline'
@@ -139,7 +142,7 @@ export const EvoBtns = ({ digimon }) => {
         >
           Adult Evolution
         </Button>
-    : digimon.digimonData.stage === 'Adult' ?
+    : myPet.digimonData.stage === 'Adult' ?
         <Button
           onClick={ () => perfectEvo() }
           variant='outline'
@@ -147,7 +150,7 @@ export const EvoBtns = ({ digimon }) => {
         >
           Perfect Evolution
         </Button>
-    : digimon.digimonData.stage === 'Perfect' ?
+    : myPet.digimonData.stage === 'Perfect' ?
         <Button
           onClick={ () => ultimateEvo() }
           variant='outline'

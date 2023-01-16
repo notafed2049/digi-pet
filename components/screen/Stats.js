@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { DateTime } from 'luxon';
 
+import { DigimonContext } from '../../pages';
 import { Walking } from '../movingSprites/Walking';
 
 import {
@@ -9,28 +10,29 @@ import {
   Text
 } from '@chakra-ui/react';
 
-export const StatScreen = ({ digimon }) => {
+export const StatScreen = () => {
+  const { myPet } = useContext( DigimonContext );
   const returnAge = () => {
-    const birthday = DateTime.fromISO( digimon.birthday );
+    const birthday = DateTime.fromISO( myPet.birthday );
     const today = DateTime.fromJSDate( new Date() );
 
     const age = today.diff( birthday, 'hours');
     return Math.trunc( age.toObject().hours );
   };
 
-  if( digimon ) {
+  if( myPet ) {
     return(
       <Flex
         direction='column'
       >
-        <Walking petData={ digimon } />
+        <Walking />
         <Flex
           padding='10px'
           direction='column'
-          backgroundColor={ digimon.digimonData.bgTheme }
+          backgroundColor={ myPet.digimonData.bgTheme }
           border='5px double'
           borderRadius='5px'
-          borderColor={ digimon.digimonData.borderTheme }
+          borderColor={ myPet.digimonData.borderTheme }
           marginTop='10px'
         >
           <Grid
@@ -40,30 +42,30 @@ export const StatScreen = ({ digimon }) => {
             <Text
               textStyle='digital'
               fontSize='10px'
-              color={ digimon.digimonData.borderTheme }
+              color={ myPet.digimonData.borderTheme }
             >
-              { `Power: ${ digimon.digimonData.power }` }
+              { `Power: ${ myPet.digimonData.power }` }
             </Text>
             <Text
               textStyle='digital'
               fontSize='10px'
-              color={ digimon.digimonData.borderTheme }
+              color={ myPet.digimonData.borderTheme }
             >
-              { `Effort: ${ digimon.effort }` }
+              { `Effort: ${ myPet.effort }` }
             </Text>
             <Text
               textStyle='digital'
               fontSize='10px'
-              color={ digimon.digimonData.borderTheme }
+              color={ myPet.digimonData.borderTheme }
             >
-              { `Battles: ${ digimon.battles }` }
+              { `Battles: ${ myPet.battles }` }
             </Text>
             <Text
               textStyle='digital'
               fontSize='10px'
-              color={ digimon.digimonData.borderTheme }
+              color={ myPet.digimonData.borderTheme }
             >
-              { `Win %: ${ ( digimon.battles/100 ) * digimon.battlesWon } %` }
+              { `Win %: ${ ( myPet.battles/100 ) * myPet.battlesWon } %` }
             </Text>
           </Grid>
           <Grid
@@ -73,23 +75,23 @@ export const StatScreen = ({ digimon }) => {
             <Text
               textStyle='digital'
               fontSize='10px'
-              color={ digimon.digimonData.borderTheme }
+              color={ myPet.digimonData.borderTheme }
             >
               { `Age: ${ returnAge() } HOURS` }
             </Text>
             <Text
               textStyle='digital'
               fontSize='10px'
-              color={ digimon.digimonData.borderTheme }
+              color={ myPet.digimonData.borderTheme }
             >
-              { `Weight: ${ digimon.digimonData.weight } G` }
+              { `Weight: ${ myPet.digimonData.weight } G` }
             </Text>
             <Text
               textStyle='digital'
               fontSize='10px'
-              color={ digimon.digimonData.borderTheme }
+              color={ myPet.digimonData.borderTheme }
             >
-              { `Stage: ${digimon.digimonData.stage}` }
+              { `Stage: ${myPet.digimonData.stage}` }
             </Text>
           </Grid>
         </Flex>
