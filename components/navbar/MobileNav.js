@@ -65,17 +65,17 @@ export const MobileNav = () => {
         >
           <Grid
             width='100%'
-            templateColumns='repeat( 4, 1fr )'
+            templateColumns='repeat( 2, 1fr )'
             gap='5px'
           >
-            <IconButton
+            <Button
               onClick={ () => signOut({ callbackUrl: '/login' }) }
-              size='lg'
-              icon={ <Icon as={ MdLogout } boxSize='30px' /> }
-              backgroundColor='transparent'
-              border='1px solid'
-              borderColor='gray.400'
-            />
+              variant='outline'
+              colorScheme='gray.400'
+              leftIcon={ <Icon as={ MdLogout } boxSize='30px' /> }
+            >
+              Logout
+            </Button>
           </Grid>
         </Flex>
         : null

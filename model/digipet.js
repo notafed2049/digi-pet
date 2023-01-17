@@ -17,6 +17,7 @@ const DigiPetSchema = new Schema({
   battlesWon: { type: Number },
   evoLine: [{ type: String }],
   birthday: { type: Date },
+  inGameTime: { type: Number }
 });
 
 const DigiPet = models.DigiPet || model( 'DigiPet', DigiPetSchema );

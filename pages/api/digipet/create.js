@@ -18,6 +18,7 @@ export default async function handler( req, res ) {
         effort: 0,
         battles: 0,
         battlesWon: 0,
+        inGameTime: 0
       });
 
       newPet.save();
